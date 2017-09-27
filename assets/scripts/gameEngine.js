@@ -29,12 +29,9 @@ const placeLetter = function (event) {
   if (isX(game) === true) {
     createx()
     $(this).text('X')
-    boardArray[this] = 'x'
   } else { createo()
     $(this).text('O')
-    boardArray[this] = 'o'
   }
-  console.log(boardArray)
   console.log ('$(this) is', $(this).text())
 }
 
