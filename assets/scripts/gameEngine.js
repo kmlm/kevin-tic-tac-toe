@@ -1,36 +1,40 @@
 //
-// const boxes = ['#box1','#box2','#box3','#box4','#box5',
-//                 '#box5','#box6','#box7','#box8','#box9']
-
-// const createx = function (event, this) {
+// const game = []
+//
+// const createx = function (event) {
 //   event.preventDefault()
-//   $(boxes[this]).text('X')
+//   $(this).text('X')
+//   game.push('x')
+//   console.log (game)
+// }
+//
+// }
+// const createo = function (event) {
+//   event.preventDefault()
+//   $(this).text('O')
+//   game.push('o')
+//   console.log (game)
+// }
+// //
+// const placeLetter = function (clickx) {
+//   if (clickx === true) {
+//     createx()
+//   }
+//   else {createo()}
 // }
 
-const game = []
-
-const createx = function (event) {
-  event.preventDefault()
-  $(this).text('X')
-  game.push('x')
-  console.log (game)
+const clickx = function () {
+  if (this  === 'x') {
+    return true
+  } else {
+    return false
+  }
 }
-
-const createo = function (event) {
-  event.preventDefault()
-  $(this).text('O')
-  game.push('x')
-  console.log (game)
-}
-
-
-// const placeLetter = function ()
-
 
 module.exports = {
-createx,
-createo,
+// createx,
+// createo,
 // placeLetter,
-// boxes,
-game
+// game,
+clickx
 }
