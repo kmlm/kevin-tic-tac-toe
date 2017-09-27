@@ -7,17 +7,22 @@
 //   $(boxes[this]).text('X')
 // }
 
-//
+const game = []
 
 const createx = function (event) {
   event.preventDefault()
   $(this).text('X')
+  game.push('x')
+  console.log (game)
 }
 
 const createo = function (event) {
   event.preventDefault()
   $(this).text('O')
+  game.push('x')
+  console.log (game)
 }
+
 
 // const placeLetter = function ()
 
@@ -26,5 +31,6 @@ module.exports = {
 createx,
 createo,
 // placeLetter,
-boxes
+// boxes,
+game
 }
