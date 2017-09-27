@@ -57,15 +57,15 @@ const boardArray = [$('#box1'),$('#box2'),$('#box3'),$('#box4'), $('#box5'),
 // New Game Button
 
 const clearBoard = function (){
-$("#box1").text(1)
-$("#box2").text(2)
-$("#box3").text(3)
-$("#box4").text(4)
-$("#box5").text(5)
-$("#box6").text(6)
-$("#box7").text(7)
-$("#box8").text(8)
-$("#box9").text(9)
+$("#box1").text('.')
+$("#box2").text('.')
+$("#box3").text('.')
+$("#box4").text('.')
+$("#box5").text('.')
+$("#box6").text('.')
+$("#box7").text('.')
+$("#box8").text('.')
+$("#box9").text('.')
 }
 
 const clearGameArray = function () {
