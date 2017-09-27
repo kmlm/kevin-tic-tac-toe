@@ -9,16 +9,32 @@
   text-align: center;
   height: 300px;
   clear: right;
+  font-size: 70px;
+}
+
+.top {
+  height: 90px;
+
+}
+
+.middle {
+  height: 90px;
+}
+
+.bottom {
+  height: 90px;
 }
 
 #box1 {
   border-right: solid black;
   border-bottom: solid black;
+  vertical-align: middle;
 }
 
 #box2 {
   border-right: solid black;
   border-bottom: solid black;
+  vertical-align: middle;
 }
 
 #box3 {
