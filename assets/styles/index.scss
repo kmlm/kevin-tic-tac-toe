@@ -1,3 +1,13 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import 'board';
+@import 'sign-in';
+
+
+h1 {
+  text-align: center;
+}
+
+body {
+  background-color: #9096E8;
+}
