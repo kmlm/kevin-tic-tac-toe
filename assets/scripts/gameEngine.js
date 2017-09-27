@@ -1,6 +1,3 @@
-
-
-
 // board array that pushing x and o to
 let game = []
 
@@ -28,9 +25,9 @@ const placeLetter = function(event) {
   event.preventDefault() // preventing page refresh
   $('.userMessage').text('') // initial user message that goes away
   if ($(this).text() === 'X' || $(this).text() === 'O') {
-    return  // only one letter per box
+    return // only one letter per box
   }
-  if (isX(game) === true) {  // x on 0 and evens and o on odds
+  if (isX(game) === true) { // x on 0 and evens and o on odds
     createx() // pushes x to array
     $(this).text('X') // changing board letter to x
   } else {
@@ -50,28 +47,29 @@ const placeLetter = function(event) {
 // win scenarios
 
 
-const boardArray = [$('#box1'),$('#box2'),$('#box3'),$('#box4'), $('#box5'),
-                    $('#box6'),$('#box7'),$('#box8'),$('#box9')]
+const boardArray = [$('#box1'), $('#box2'), $('#box3'), $('#box4'), $('#box5'),
+  $('#box6'), $('#box7'), $('#box8'), $('#box9')
+]
 
 
 // New Game Button
 
-const clearBoard = function (){
-$("#box1").text('.')
-$("#box2").text('.')
-$("#box3").text('.')
-$("#box4").text('.')
-$("#box5").text('.')
-$("#box6").text('.')
-$("#box7").text('.')
-$("#box8").text('.')
-$("#box9").text('.')
+const clearBoard = function() {
+  $("#box1").text('.')
+  $("#box2").text('.')
+  $("#box3").text('.')
+  $("#box4").text('.')
+  $("#box5").text('.')
+  $("#box6").text('.')
+  $("#box7").text('.')
+  $("#box8").text('.')
+  $("#box9").text('.')
 }
 
-const clearGameArray = function () {
+const clearGameArray = function() {
   game = []
 }
-const newGame = function (event) {
+const newGame = function(event) {
   event.preventDefault()
   clearGameArray()
   clearBoard()
@@ -82,13 +80,13 @@ const newGame = function (event) {
 
 
 module.exports = {
-createx,
-createo,
-placeLetter,
-game,
-isX,
-boardArray,
-newGame,
-clearBoard,
-clearGameArray
+  createx,
+  createo,
+  placeLetter,
+  game,
+  isX,
+  boardArray,
+  newGame,
+  clearBoard,
+  clearGameArray
 }
