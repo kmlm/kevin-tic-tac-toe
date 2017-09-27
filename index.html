@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>TIC-TAC-TOE</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -11,15 +11,66 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+
+
+
+    <body class="container-fluid">
+
+      <h1>TIC-TAC-TOE</h1>
+
+<!-- Sign in area -->
+      <div class ='forms'></div>
+        <form class = 'sign-in-form'>
+            <input type='text' name= "credentials[email]" placeholder="Email">
+            <input type='text' name= "credentials[password]" placeholder="Password">
+                <button type="submit" class="sign-in-button">Sign In</button>
+          </form>
+        <form class = 'new-user-form'>
+          <input type='text' name= "credentials[email]" placeholder="Email">
+          <input type='text' name= "credentials[password]" placeholder="Password">
+          <input type='text' name= "credentials[password]" placeholder="Confirm Password">
+              <button type="submit" class="sign-up-button">Sign Up</button>
+      </div>
+
+
+<!-- Game Board -->
+
+      <div></div>
+      <div></div>
+      <div></div>
+
+<!-- Left Message Box -->
+      <div></div>
+
+
+<!-- Right Message Box -->
+      <div></div>
+
+<!-- New Game Button -->
+
+      <div></div>
+
+<!-- Sign Out Button - trigger thanks for playing in UI Success and You can't leave yet for failure in section  -->
+
+    <div>
+        <form class = 'sign-out'>
+
+        </form>
+
+          <section> </section>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
     </body>
 </html>
