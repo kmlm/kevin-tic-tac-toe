@@ -19,15 +19,15 @@ $(() => {
 // Changing box to X or O
 
 $(() => {
-  $("#box1").on('click', gameEngine.createx)
-  $("#box2").on('click', gameEngine.createx)
-  $("#box3").on('click', gameEngine.createx)
-  $("#box4").on('click', gameEngine.createx)
-  $("#box5").on('click', gameEngine.createx)
-  $("#box6").on('click', gameEngine.createx)
-  $("#box7").on('click', gameEngine.createx)
-  $("#box8").on('click', gameEngine.createx)
-  $("#box9").on('click', gameEngine.createx)
+  $("#box1").on('click', gameEngine.placeLetter)
+  $("#box2").on('click', gameEngine.placeLetter)
+  $("#box3").on('click', gameEngine.placeLetter)
+  $("#box4").on('click', gameEngine.placeLetter)
+  $("#box5").on('click', gameEngine.placeLetter)
+  $("#box6").on('click', gameEngine.placeLetter)
+  $("#box7").on('click', gameEngine.placeLetter)
+  $("#box8").on('click', gameEngine.placeLetter)
+  $("#box9").on('click', gameEngine.placeLetter)
 })
 
 

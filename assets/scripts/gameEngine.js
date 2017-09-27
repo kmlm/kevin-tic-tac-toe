@@ -1,69 +1,41 @@
 // board array that pushing x and o to
 const game = []
 
-// checking for empty board
-
-// const board = {
-//   '#box1': ,
-//   '#box2': ,
-//   '#box3': ,
-//   '#box4': ,
-//   '#box5': ,
-//   '#box6': ,
-//   '#box7': ,
-//   '#box8': ,
-//   '#box9': ,
-// }
-
-// const checkBoard = function () {
-//   for (let i =0 ; i<board.length i++) {
-//     if (board.)
-//   }
-// }
-
-
 // pushing x and o
-const createx = function (event) {
-  event.preventDefault()
-  $(this).text('X')
+const createx = function () {
   game.push('x')
   console.log (game)
-  console.log(isX)
 }
 
-// when to use x --- place x on even or 0 and o on odd
+const createo = function () {
+  game.push('o')
+  console.log (game)
+}
+
+// when to use x or o --- place x on even or 0 and o on odd
+
 const isX = function (array) {
   if (array.length === 0 || array.length % 2 === 0)
     {return true}
 }
-// const createo = function (event) {
-//   event.preventDefault()
-//   $(this).text('O')
-//   game.push('o')
-//   console.log (game)
-// }
 
-// trying to combine x and o function
+// Placing x and o on board and pushing to array game
 
-const placeLetter = function (isX, createx, createo) {
+const placeLetter = function (event) {
+  event.preventDefault()
   if (isX(game) === true) {
-    createx()}
-  else {createo()}
+    createx()
+    $(this).text('X')
+  }
+  else {createo()
+        $(this).text('O')}
 }
 
-// const clickx = function () {
-//   if (this  === 'x') {
-//     return true
-//   } else {
-//     return false
-//   }
-// }
 
 module.exports = {
 createx,
-// createo,
-// placeLetter,
+createo,
+placeLetter,
 game,
-// clickx,
 isX
 }
