@@ -20,7 +20,7 @@
       <h1>TIC-TAC-TOE</h1>
 
 <!-- Sign in area -->
-      <div class ='forms'></div>
+      <div class ='forms'>
         <form class = 'sign-in-form'>
             <input type='text' name= "credentials[email]" placeholder="Email">
             <input type='text' name= "credentials[password]" placeholder="Password">
@@ -31,46 +31,53 @@
           <input type='text' name= "credentials[password]" placeholder="Password">
           <input type='text' name= "credentials[password]" placeholder="Confirm Password">
               <button type="submit" class="sign-up-button">Sign Up</button>
+        </form>
       </div>
 
 
 <!-- Game Board -->
 
-      <div></div>
-      <div></div>
-      <div></div>
+<div class = 'board'>
 
+    <div class="top">
+      <div class="col-xs-4 col-md-4 box" id = 'box1'>1</div>
+      <div class="col-xs-4 col-md-4 box" id = 'box2'>2</div>
+      <div class="col-xs-4 col-md-4 box" id = 'box3'>3</div>
+    </div>
+
+    <div class="middle">
+      <div class="col-xs-4 col-md-4 box" id = 'box4'>4</div>
+      <div class="col-xs-4 col-md-4 box" id = 'box5'>5</div>
+      <div class="col-xs-4 col-md-4 box" id = 'box6'>6</div>
+    </div>
+
+  <div class="bottom">
+    <div class="col-xs-4 col-md-4 box" id = 'box7'>7</div>
+    <div class="col-xs-4 col-md-4 box" id = 'box8'>8</div>
+    <div class="col-xs-4 col-md-4 box" id = 'box9'>9</div>
+  </div>
+</div>
 <!-- Left Message Box -->
-      <div></div>
+      <div> X </div>
 
 
 <!-- Right Message Box -->
-      <div></div>
+      <div> O </div>
 
 <!-- New Game Button -->
 
-      <div></div>
+      <div>
+        <button type ="submit" class = 'sign-out-button'> Give it another go </button>
+      </div>
 
 <!-- Sign Out Button - trigger thanks for playing in UI Success and You can't leave yet for failure in section  -->
 
-    <div>
+    <div class = 'forms'>
         <form class = 'sign-out'>
-
+          <button type="submit" class="sign-out-button">Sign Out</button>
         </form>
-
           <section> </section>
     </div>
-
-
-
-
-
-
-
-
-
-
-
 
     </body>
 </html>
