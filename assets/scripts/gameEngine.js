@@ -24,6 +24,7 @@ const isX = function (array) {
 
 const placeLetter = function (event) {
   event.preventDefault()
+  $('.userMessage').text('')
   if ($(this).text() === 'X' || $(this).text() === 'O')
     {return}
   if (isX(game) === true) {
