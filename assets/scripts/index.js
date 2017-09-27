@@ -27,6 +27,9 @@ $(() => {
   $("#box9").on('click', gameEngine.placeLetter)
 })
 
+$(() => {
+  $('.new-game-button').on('click', gameEngine.newGame)
+})
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
