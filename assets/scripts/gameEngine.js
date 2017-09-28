@@ -184,34 +184,34 @@ const oWins = {
 }
 
 
-function getXIndexes(array, 'x') {
-    var Xindexes = [], i = -1;
-    while ((i = array.indexOf('x', i+1)) != -1){
-        indexes.push(i);
+function getXIndexes(array, val) {
+    var Xindexes = [], i = -1
+    while ((i = array.indexOf(val, i+1)) != -1){
+        Xindexes.push(i)
     }
-    return Xindexes;
+    return Xindexes
 }
 
-function getOIndexes(array, 'o') {
+function getOIndexes(array, val) {
     var Oindexes = [], i = -1;
-    while ((i = array.indexOf('o', i+1)) != -1){
-        indexes.push(i);
+    while ((i = array.indexOf(val, i+1)) != -1){
+        Oindexes.push(i)
     }
-    return Oindexes;
+    return Oindexes
 }
 
 const checkForWin = function (array) {
-  getAllIndexes(array)
-  getOIndexes(array)
-  if (Xindexes === xWins.'top' || Xindexes === xWins.'middle' || Xindexes === xWins.'bottom' ||
-      Xindexes === xWins.'diagonal1' || Xindexes === xWins.'vertLeft' || Xindexes === xWins.'vertCenter' ||
-      Xindexes === xWins.'vertRight')|| Xindexes === xWins.'diagonal2'){
+  getXIndexes(array, 'x')
+  getOIndexes(array, 'o')
+  if (Xindexes === xWins.top || Xindexes === xWins.middle || Xindexes === xWins.bottom ||
+      Xindexes === xWins.diagonal1 || Xindexes === xWins.vertLeft || Xindexes === xWins.vertCenter ||
+      Xindexes === xWins.vertRight || Xindexes === xWins.diagonal2){
         console.log ('x wins')
         return
       }
-  else if (Oindexes === xWins.'top' || Oindexes === xWins.'middle' || Oindexes === xWins.'bottom' ||
-      Oindexes === xWins.'diagonal1' || Oindexes === xWins.'vertLeft' || Oindexes === xWins.'vertCenter' ||
-      Oindexes === xWins.'vertRight')|| Oindexes === xWins.'diagonal2'){
+  else if (Oindexes === oWins.top || Oindexes === oWins.middle || Oindexes === oWins.bottom ||
+      Oindexes === oWins.diagonal1 || Oindexes === oWins.vertLeft || Oindexes === oWins.vertCenter ||
+      Oindexes === oWins.vertRight || Oindexes === oWins.diagonal2){
         console.log('o wins')
         return
 }
