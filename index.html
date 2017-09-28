@@ -27,16 +27,17 @@
       <form class='sign-in-form'>
         <input type='text' name="credentials[email]" placeholder="Email">
         <input type='text' name="credentials[password]" placeholder="Password">
-        <button type="submit" class="sign-in-button">Sign In</button>
+        <input type="submit" name='submit' value ='Sign In'>
       </form>
       <div class='sign-up'>
         <section> New Here? No problem </section>
-        <form class='new-user-form'>
+        <form id='new-user-form'>
           <input type='text' name="credentials[email]" placeholder="Email">
           <input type='text' name="credentials[password]" placeholder="Password">
           <input type='text' name="credentials[password]" placeholder="Confirm Password">
-          <button type="submit" class="sign-up-button">Sign Up</button>
+          <input type="submit" name='submit' value ='Sign Up'>
         </form>
+        <section id ='message'></section>
       </div>
     </div>
     <!-- Speace between -->
@@ -105,10 +106,11 @@
     <div class="spaceBetweenButtons">
     </div>
     <!-- Sign Out Button - trigger thanks for playing in UI Success and You can't leave yet for failure in section  -->
+    <!-- ***Need to hide until signed in**** -->
 
     <div class='signOut'>
       <form>
-        <button type="submit" class="sign-out-button">Sign Out</button>
+        <input type="submit" name='submit' value ='Sign Out'>
       </form>
       <section> </section>
     </div>
