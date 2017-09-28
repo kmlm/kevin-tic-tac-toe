@@ -1,5 +1,5 @@
 // board array that pushing x and o to
-let game = [0,1,2,3,4,5,6,7,8]
+let game = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
 // pushing x and o
 const createx = function(index) {
@@ -8,7 +8,7 @@ const createx = function(index) {
 }
 
 const createo = function(index) {
-  game[index] =('o')
+  game[index] = ('o')
   console.log(game)
 }
 
@@ -20,17 +20,16 @@ const isX = function(array) {
   }
 }
 
-
 // preventDefault function
 
-const noRefresh = function (event){
-  event.preventDefault()
-}
+// const noRefresh = function (event){
+//   event.preventDefault()
+// }
 
 // Placing x and o on board and pushing to array game
 
 const placeLetter = function(index) {
-  noRefresh() // preventing page refresh
+  event.preventDefault() // preventing page refresh
   $('.userMessage').text('') // initial user message that goes away
   if ($(this).text() === 'X' || $(this).text() === 'O') {
     return // only one letter per box
@@ -72,9 +71,10 @@ const clearBoard = function() {
   $("#box9").text('.')
 }
 
-const clearGameArray = function() {
-  game = []
+const clearGameArray = function(){
+  game = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 }
+
 const newGame = function(event) {
   event.preventDefault()
   clearGameArray()
