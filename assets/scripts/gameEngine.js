@@ -1,5 +1,7 @@
 // board array that pushing x and o to
 let game = ['', '', '', '', '', '', '', '', '']
+let gameOver = false
+let numTurns = 0
 
 // pushing x and o
 const createx = function(index) {
@@ -14,8 +16,6 @@ const createo = function(index) {
 
 // when to use x or o --- place x on even or 0 and o on odd
 
-let numTurns = 0
-
 const whoseTurn = function() {
   if (numTurns === 0 || numTurns % 2 === 0) {
     return 'x'
@@ -29,6 +29,11 @@ const whoseTurn = function() {
 const placeLetter = function(event) {
   event.preventDefault() // preventing page refresh
   $('.userMessage').text('') // initial user message that goes away
+  if (gameOver) { // whether clicks should be firing -- should not if game is over
+    console.log('did it work?')
+    $('.userMessage').text('This game is over. Click the button below to start a new game.')
+    return
+  }
   if ($(this).text() === 'X' || $(this).text() === 'O') {
     return // only one letter per box
   }
@@ -41,41 +46,15 @@ const placeLetter = function(event) {
   }
   numTurns++
   checkForWin()
-  if ($('.userMessage').text() === 'X WINS!' || $('.userMessage').text() === 'O WINS!') {
-    event.stopImmediatePropagation()
-  }
+  // if ($('.userMessage').text() === 'X WINS!' || $('.userMessage').text() === 'O WINS!') {
+  //
+  // }
   console.log(game)
   console.log(numTurns)
+  console.log(gameOver)
 }
-//
 
-// ending game
-//
-// checking to see who won
-
-// win scenarios with indexes where x and o need to be for win
-
-// const xWins = {
-//   top: [0, 1, 2],
-//   middle: [3, 4, 5],
-//   bottom: [6, 7, 8],
-//   diagonal1: [0, 4, 8],
-//   vertLeft: [0, 3, 6],
-//   vertCenter: [1, 4, 7],
-//   vertRight: [2, 5, 8],
-//   diagonal2: [2, 4, 6]
-// }
-//
-// const oWins = {
-//   top: [0, 1, 2],
-//   middle: [3, 4, 5],
-//   bottom: [6, 7, 8],
-//   diagonal1: [0, 4, 8],
-//   vertLeft: [0, 3, 6],
-//   vertCenter: [1, 4, 7],
-//   vertRight: [2, 5, 8],
-//   diagonal2: [2, 4, 6]
-// }
+// ENDING GAME
 
 // checking to see who won based on indexes
 
@@ -87,6 +66,7 @@ const checkForWin = function() {
   ) {
     console.log('x wins')
     $('.userMessage').text('X WINS!')
+    gameOver = true
     return
   } else if ((game[0] === 'o' && game[1] === 'o' && game[2] === 'o') || (game[3] === 'o' && game[4] === 'o' && game[5] === 'o') ||
     (game[6] === 'o' && game[7] === 'o' && game[8] === 'o') || (game[0] === 'o' && game[4] === 'o' && game[8] === 'o') ||
@@ -95,12 +75,14 @@ const checkForWin = function() {
   ) {
     console.log('o wins')
     $('.userMessage').text('O WINS!')
+    gameOver = true
     return
   } else {
     console.log('no winner')
   }
   if (numTurns === 9) {
     $('.userMessage').text('Tic Tac Tie!')
+    gameOver = true
   }
 }
 
