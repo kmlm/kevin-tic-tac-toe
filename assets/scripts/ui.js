@@ -1,4 +1,5 @@
 const store = require('./store')
+const gameEngine = require('./gameEngine')
 
 const signUpSuccess = function (data) {
   console.log(data)
@@ -32,7 +33,6 @@ const signInFailure = function (error) {
   $('#message').text('Invalid Password / Username')
 }
 
-
 const signOutSuccess = function () {
   $('.userMessage').text('Thanks for Playing!')
   console.log('Logged out sucessfully')
@@ -43,6 +43,8 @@ const signOutSuccess = function () {
   $('#new-user-form').show()
   $('#sign-up-message').show()
   $('#sign-out-input').hide()
+  gameEngine.clearGameArray()
+  gameEngine.clearBoard()
 }
 
 module.exports = {

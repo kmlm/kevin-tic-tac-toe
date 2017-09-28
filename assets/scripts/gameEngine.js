@@ -29,7 +29,8 @@ const whoseTurn = function() {
 
 const placeLetter = function(event) {
   event.preventDefault() // preventing page refresh
-  $('.userMessage').text('') // initial user message that goes away
+  $('#message').hide() // hides sign in successfull message when first box clicked
+  $('.userMessage').text('') // initial user instruction that goes away
   if (gameOver) { // whether clicks should be firing -- should not if game is over
     console.log('did it work?')
     $('.userMessage').text('This game is over. Click the button below to start a new game.')
