@@ -1,14 +1,14 @@
 // board array that pushing x and o to
-let game = []
+let game = [0,1,2,3,4,5,6,7,8]
 
 // pushing x and o
-const createx = function() {
-  game.push('x')
+const createx = function(index) {
+  game[index] = ('x')
   console.log(game)
 }
 
-const createo = function() {
-  game.push('o')
+const createo = function(index) {
+  game[index] =('o')
   console.log(game)
 }
 
@@ -21,17 +21,17 @@ const isX = function(array) {
 }
 // Placing x and o on board and pushing to array game
 
-const placeLetter = function(event) {
+const placeLetter = function(index, event) {
   event.preventDefault() // preventing page refresh
   $('.userMessage').text('') // initial user message that goes away
   if ($(this).text() === 'X' || $(this).text() === 'O') {
     return // only one letter per box
   }
   if (isX(game) === true) { // x on 0 and evens and o on odds
-    createx() // pushes x to array
+    createx(index) // pushes x to array
     $(this).text('X') // changing board letter to x
   } else {
-    createo()
+    createo(index)
     $(this).text('O')
   }
   console.log('$(this) is', $(this).text())
@@ -46,10 +46,10 @@ const placeLetter = function(event) {
 
 // win scenarios
 
-
-const boardArray = [$('#box1'), $('#box2'), $('#box3'), $('#box4'), $('#box5'),
-  $('#box6'), $('#box7'), $('#box8'), $('#box9')
-]
+//
+// const boardArray = [$('#box1'), $('#box2'), $('#box3'), $('#box4'), $('#box5'),
+//   $('#box6'), $('#box7'), $('#box8'), $('#box9')
+// ]
 
 
 // New Game Button
@@ -85,7 +85,7 @@ module.exports = {
   placeLetter,
   game,
   isX,
-  boardArray,
+  // boardArray,
   newGame,
   clearBoard,
   clearGameArray
