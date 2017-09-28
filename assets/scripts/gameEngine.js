@@ -23,41 +23,6 @@ const whoseTurn = function() {
     return 'o'
   }
 }
-// const isX = function(array) {
-//   if (array.length === 0 || array.length % 2 === 0) {
-//     return true
-//   }
-// }
-
-// const isX = function () {
-//     let numX = 0;
-//     for (let i = 0; i < game.length; i++) {
-//         if (game[i] === 'x') {
-//             numX++
-//         }
-//     }
-//     return numX;
-// }
-
-// const isX = function(array) {
-//   let numX = 0
-//   for(let i=0;i<array.length;i++){
-//       if(array[i] === "x")
-//          numX++
-//        }
-//   if (numX === 0 || numX % 2 === 0) {
-//     return true
-//   }
-// }
-
-// const isX = function(array, val) {
-//   let Oindexes = [],
-//     i = -1
-//   while ((i = array.indexOf(val, i + 1)) != -1) {
-//     Oindexes.push(i)
-//   }
-//   return Oindexes
-// }
 
 // Placing x and o on board and pushing to array game
 
@@ -84,7 +49,6 @@ const placeLetter = function(event) {
 //
 // checking to see who won
 
-// const testGame = ['x', 'x', 'x', '']
 // win scenarios
 
 const xWins = {
@@ -109,14 +73,7 @@ const oWins = {
   diagonal2: [2, 4, 6]
 }
 
-// const getXIndexes = function(array, val) {
-//   let Xindexes = [],
-//     i = -1
-//   while ((i = array.indexOf(val, i + 1)) != -1) {
-//     Xindexes.push(i)
-//   }
-//   return Xindexes
-// }
+// getting index of x or o from game array
 
 const getXIndexes = function() {
   let Xindexes = [],
@@ -127,15 +84,6 @@ const getXIndexes = function() {
   return Xindexes
 }
 
-// const getOIndexes = function(array, val) {
-//   let Oindexes = [],
-//     i = -1
-//   while ((i = array.indexOf(val, i + 1)) != -1) {
-//     Oindexes.push(i)
-//   }
-//   return Oindexes
-// }
-
 const getOIndexes = function() {
   let Oindexes = [],
     i = -1
@@ -144,6 +92,8 @@ const getOIndexes = function() {
   }
   return Oindexes
 }
+
+// checking to see who won based on indexes
 
 const checkForWin = function () {
   if (getXIndexes().toString() === xWins.top.toString() || getXIndexes().toString() === xWins.middle.toString() || getXIndexes().toString() === xWins.bottom.toString() ||
@@ -197,10 +147,12 @@ module.exports = {
   createo,
   placeLetter,
   game,
-  // isX,
   newGame,
   clearBoard,
   clearGameArray,
+  clearNumTurn,
+  numTurn,
+  whoseTurn,
   // noRefresh,
   getXIndexes,
   getOIndexes
