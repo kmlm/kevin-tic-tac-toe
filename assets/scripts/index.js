@@ -3,6 +3,7 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const gameEngine = require('./gameEngine')
+const events = require('./events')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -39,10 +40,20 @@ $(() => {
   $("#box9").on('click', gameEngine.placeLetter)
 })
 
-
+// Reset with new game button
 $(() => {
   $('.new-game-button').on('click', gameEngine.newGame)
 })
+
+
+// API
+
+$(() => {
+ $('#new-user-form').on('submit', events.onSignUp)
+ $('#sign-in-form').on('submit', events.onSignIn)
+ $('#sign-out').on('submit', events.onSignOut)
+ })
+
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
