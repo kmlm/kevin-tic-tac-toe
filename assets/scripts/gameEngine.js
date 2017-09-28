@@ -19,19 +19,27 @@ const isX = function(array) {
     return true
   }
 }
+
+
+// preventDefault function
+
+const noRefresh = function (event){
+  event.preventDefault()
+}
+
 // Placing x and o on board and pushing to array game
 
-const placeLetter = function(index, event) {
-  event.preventDefault() // preventing page refresh
+const placeLetter = function(index) {
+  noRefresh() // preventing page refresh
   $('.userMessage').text('') // initial user message that goes away
   if ($(this).text() === 'X' || $(this).text() === 'O') {
     return // only one letter per box
   }
   if (isX(game) === true) { // x on 0 and evens and o on odds
-    createx(index) // pushes x to array
+    createx() // pushes x to array
     $(this).text('X') // changing board letter to x
   } else {
-    createo(index)
+    createo()
     $(this).text('O')
   }
   console.log('$(this) is', $(this).text())
@@ -46,11 +54,9 @@ const placeLetter = function(index, event) {
 
 // win scenarios
 
-//
 // const boardArray = [$('#box1'), $('#box2'), $('#box3'), $('#box4'), $('#box5'),
 //   $('#box6'), $('#box7'), $('#box8'), $('#box9')
 // ]
-
 
 // New Game Button
 
@@ -88,5 +94,6 @@ module.exports = {
   // boardArray,
   newGame,
   clearBoard,
-  clearGameArray
+  clearGameArray,
+  noRefresh
 }
