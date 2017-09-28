@@ -14,16 +14,18 @@ const createo = function(index) {
 
 // when to use x or o --- place x on even or 0 and o on odd
 
+const xOrO = function () {
+
+}
 // const isX = function(array) {
 //   if (array.length === 0 || array.length % 2 === 0) {
 //     return true
 //   }
 // }
 
-
 const isX = function () {
     let numX = 0;
-    for (var i = 0; i < game.length; i++) {
+    for (let i = 0; i < game.length; i++) {
         if (game[i] === 'x') {
             numX++
         }
@@ -190,5 +192,5 @@ module.exports = {
   clearGameArray,
   // noRefresh,
   getXIndexes,
-  getOIndexes,
+  getOIndexes
 }
