@@ -20,16 +20,36 @@ const createo = function(index) {
 //   }
 // }
 
-const isX = function(array) {
-  let numX = 0
-  for(let i=0;i<array.length;i++){
-      if(array[i] === "x")
-         numX++
+
+const isX = function () {
+    let numX = 0;
+    for (var i = 0; i < game.length; i++) {
+        if (game[i] === 'x') {
+            numX++
+        }
     }
-  if (numX === 0 || numX % 2 === 0) {
-    return true
-  }
+    return numX;
 }
+
+// const isX = function(array) {
+//   let numX = 0
+//   for(let i=0;i<array.length;i++){
+//       if(array[i] === "x")
+//          numX++
+//        }
+//   if (numX === 0 || numX % 2 === 0) {
+//     return true
+//   }
+// }
+
+// const isX = function(array, val) {
+//   let Oindexes = [],
+//     i = -1
+//   while ((i = array.indexOf(val, i + 1)) != -1) {
+//     Oindexes.push(i)
+//   }
+//   return Oindexes
+// }
 
 // Placing x and o on board and pushing to array game
 
@@ -39,7 +59,7 @@ const placeLetter = function(event) {
   if ($(this).text() === 'X' || $(this).text() === 'O') {
     return // only one letter per box
   }
-  if (isX(game) === true) { // x on 0 and evens and o on odds
+  if (isX() === 0 || isX() % 2 === 0) { // x on 0 and evens and o on odds
     createx($(this).data('index')) // pushes x to array
     $(this).text('X') // changing board letter to x
   } else {
@@ -50,7 +70,6 @@ const placeLetter = function(event) {
   console.log(isX)
 }
 //
-
 
 // ending game
 //
@@ -82,37 +101,55 @@ const oWins = {
 }
 
 
-const getXIndexes = function(array, val) {
+// const getXIndexes = function(array, val) {
+//   let Xindexes = [],
+//     i = -1
+//   while ((i = array.indexOf(val, i + 1)) != -1) {
+//     Xindexes.push(i)
+//   }
+//   return Xindexes
+// }
+
+const getXIndexes = function() {
   let Xindexes = [],
     i = -1
-  while ((i = array.indexOf(val, i + 1)) != -1) {
+  while ((i = game.indexOf('x', i + 1)) != -1) {
     Xindexes.push(i)
   }
   return Xindexes
 }
 
-const getOIndexes = function(array, val) {
+// const getOIndexes = function(array, val) {
+//   let Oindexes = [],
+//     i = -1
+//   while ((i = array.indexOf(val, i + 1)) != -1) {
+//     Oindexes.push(i)
+//   }
+//   return Oindexes
+// }
+
+const getOIndexes = function() {
   let Oindexes = [],
     i = -1
-  while ((i = array.indexOf(val, i + 1)) != -1) {
+  while ((i = game.indexOf('x', i + 1)) != -1) {
     Oindexes.push(i)
   }
   return Oindexes
 }
 
-const checkForWin = function(array) {
-  getXIndexes(array, 'x')
-  getOIndexes(array, 'o')
-  if (Xindexes === xWins.top || Xindexes === xWins.middle || Xindexes === xWins.bottom ||
-    Xindexes === xWins.diagonal1 || Xindexes === xWins.vertLeft || Xindexes === xWins.vertCenter ||
-    Xindexes === xWins.vertRight || Xindexes === xWins.diagonal2) {
+const checkForWin = function () {
+  if (getXIndexes === xWins.top || getXIndexes === xWins.middle || getXIndexes === xWins.bottom ||
+    getXIndexes === xWins.diagonal1 || getXIndexes === xWins.vertLeft || getXIndexes === xWins.vertCenter ||
+    getXIndexes === xWins.vertRight || getXIndexes === xWins.diagonal2) {
     console.log('x wins')
     return
-  } else if (Oindexes === oWins.top || Oindexes === oWins.middle || Oindexes === oWins.bottom ||
-    Oindexes === oWins.diagonal1 || Oindexes === oWins.vertLeft || Oindexes === oWins.vertCenter ||
-    Oindexes === oWins.vertRight || Oindexes === oWins.diagonal2) {
+  } else if (getOIndexes === oWins.top || getOIndexes === oWins.middle || getOIndexes === oWins.bottom ||
+    getOIndexes === oWins.diagonal1 || getOIndexes === oWins.vertLeft || getOIndexes === oWins.vertCenter ||
+    getOIndexes === oWins.vertRight || getOIndexes === oWins.diagonal2) {
     console.log('o wins')
+    return
   }
+  else {console.log ('no winner')}
 }
 
 // New Game Button
@@ -154,5 +191,5 @@ module.exports = {
   clearGameArray,
   // noRefresh,
   getXIndexes,
-  getOIndexes
+  getOIndexes,
 }
