@@ -1,5 +1,5 @@
 // board array that pushing x and o to
-let game = []
+let game = [1,2,3,4,5,6,7,8,9]
 
 // pushing x and o
 const createx = function(index) {
@@ -14,12 +14,22 @@ const createo = function(index) {
 
 // when to use x or o --- place x on even or 0 and o on odd
 
+// const isX = function(array) {
+//   if (array.length === 0 || array.length % 2 === 0) {
+//     return true
+//   }
+// }
+
 const isX = function(array) {
-  if (array.length === 0 || array.length % 2 === 0) {
+  let numX = 0
+  for(let i=0;i<array.length;i++){
+      if(array[i] === "x")
+         numX++
+    }
+  if (numX === 0 || numX % 2 === 0) {
     return true
   }
 }
-
 // preventDefault function
 
 // const noRefresh = function (event){
@@ -54,10 +64,10 @@ const placeLetter = function(event) {
   if ($(this).text() === 'X' || $(this).text() === 'O') {
     return // only one letter per box
   }
-  if (isX(game) === true) { // x on 0 and evens and o on odds
+  if (isX(game) === true && $(this) === $('#box1')) { // x on 0 and evens and o on odds
     createx(0) // pushes x to box1
     $(this).text('X') // changing board letter to x
-  } else if (isX(game) === true && this === '#box2') { // x on 0 and evens and o on odds
+  } else if (isX(game) === true && $(this) === '#box2') { // x on 0 and evens and o on odds
     createx(1) // pushes x to box1
     $(this).text('X') // changing board letter to x
   } else if (isX(game) === true && $(this) === '#box3') { // x on 0 and evens and o on odds
@@ -66,7 +76,7 @@ const placeLetter = function(event) {
   } else if (isX(game) === true && $(this) === '#box4') { // x on 0 and evens and o on odds
     createx(3) // pushes x to box1
     $(this).text('X') // changing board letter to x
-  } else if (isX(game) === true && this === '#box5') { // x on 0 and evens and o on odds
+  } else if (isX(game) === true && $(this) === '#box5') { // x on 0 and evens and o on odds
     createx(4) // pushes x to box1
     $(this).text('X') // changing board letter to x
   } else if (isX(game) === true && $(this) === '#box6') { // x on 0 and evens and o on odds
@@ -168,7 +178,7 @@ const clearBoard = function() {
 }
 
 const clearGameArray = function(){
-  game = []
+  game = [1,2,3,4,5,6,7,8,9]
 }
 
 const newGame = function(event) {
