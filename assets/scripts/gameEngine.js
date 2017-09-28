@@ -1,5 +1,5 @@
 // board array that pushing x and o to
-let game = ['','','','','','','','','']
+let game = ['', '', '', '', '', '', '', '', '']
 
 // pushing x and o
 const createx = function(index) {
@@ -41,9 +41,11 @@ const placeLetter = function(event) {
   }
   numTurns++
   checkForWin()
+  if ($('.userMessage').text() === 'X WINS!' || $('.userMessage').text() === 'O WINS!') {
+    event.stopImmediatePropagation()
+  }
   console.log(game)
   console.log(numTurns)
-  console.log(checkForWin())
 }
 //
 
@@ -51,7 +53,7 @@ const placeLetter = function(event) {
 //
 // checking to see who won
 
-// win scenarios
+// win scenarios with indexes where x and o need to be for win
 
 // const xWins = {
 //   top: [0, 1, 2],
@@ -77,23 +79,29 @@ const placeLetter = function(event) {
 
 // checking to see who won based on indexes
 
-const checkForWin = function () {
-  if ((game[0] === 'x' && game[1] === 'x' && game[2] === 'x') || (game[3] === 'x' && game[4] === 'x' && game[5] === 'x')
-      || (game[6] === 'x' && game[7] === 'x' && game[8] === 'x') || (game[0] === 'x' && game[4] === 'x' && game[8] === 'x')
-      || (game[0] === 'x' && game[3] === 'x' && game[6] === 'x') || (game[1] === 'x' && game[4] === 'x' && game[7] === 'x')
-      || (game[2] === 'x' && game[5] === 'x' && game[8] === 'x') ||(game[2] === 'x' && game[4] === 'x' && game[6] === 'x')
-    ){
+const checkForWin = function() {
+  if ((game[0] === 'x' && game[1] === 'x' && game[2] === 'x') || (game[3] === 'x' && game[4] === 'x' && game[5] === 'x') ||
+    (game[6] === 'x' && game[7] === 'x' && game[8] === 'x') || (game[0] === 'x' && game[4] === 'x' && game[8] === 'x') ||
+    (game[0] === 'x' && game[3] === 'x' && game[6] === 'x') || (game[1] === 'x' && game[4] === 'x' && game[7] === 'x') ||
+    (game[2] === 'x' && game[5] === 'x' && game[8] === 'x') || (game[2] === 'x' && game[4] === 'x' && game[6] === 'x')
+  ) {
     console.log('x wins')
+    $('.userMessage').text('X WINS!')
     return
-  } else if ((game[0] === 'o' && game[1] === 'o' && game[2] === 'o') || (game[3] === 'o' && game[4] === 'o' && game[5] === 'o')
-      || (game[6] === 'o' && game[7] === 'o' && game[8] === 'o') || (game[0] === 'o' && game[4] === 'o' && game[8] === 'o')
-      || (game[0] === 'o' && game[3] === 'o' && game[6] === 'o') || (game[1] === 'o' && game[4] === 'o' && game[7] === 'o')
-      || (game[2] === 'o' && game[5] === 'o' && game[8] === 'o') ||(game[2] === 'o' && game[4] === 'o' && game[6] === 'o')
-  ){
+  } else if ((game[0] === 'o' && game[1] === 'o' && game[2] === 'o') || (game[3] === 'o' && game[4] === 'o' && game[5] === 'o') ||
+    (game[6] === 'o' && game[7] === 'o' && game[8] === 'o') || (game[0] === 'o' && game[4] === 'o' && game[8] === 'o') ||
+    (game[0] === 'o' && game[3] === 'o' && game[6] === 'o') || (game[1] === 'o' && game[4] === 'o' && game[7] === 'o') ||
+    (game[2] === 'o' && game[5] === 'o' && game[8] === 'o') || (game[2] === 'o' && game[4] === 'o' && game[6] === 'o')
+  ) {
     console.log('o wins')
+    $('.userMessage').text('O WINS!')
     return
+  } else {
+    console.log('no winner')
   }
-  else {console.log ('no winner')}
+  if (numTurns === 9) {
+    $('.userMessage').text('Tic Tac Tie!')
+  }
 }
 
 // New Game Button
@@ -110,8 +118,8 @@ const clearBoard = function() {
   $("#box9").text('.')
 }
 
-const clearGameArray = function(){
-  game = ['','','','','','','','','']
+const clearGameArray = function() {
+  game = ['', '', '', '', '', '', '', '', '']
 }
 
 const clearNumTurns = function() {
@@ -122,6 +130,7 @@ const newGame = function(event) {
   clearGameArray()
   clearBoard()
   clearNumTurns()
+  $('.userMessage').text('')
   console.log(game)
   console.log(numTurns)
 }
@@ -138,8 +147,5 @@ module.exports = {
   clearGameArray,
   clearNumTurns,
   numTurns,
-  whoseTurn,
-  // noRefresh,
-  getXIndexes,
-  getOIndexes
+  whoseTurn
 }
