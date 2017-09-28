@@ -54,8 +54,6 @@ const placeLetter = function(index, event) {
 // win scenarios
 
 
-[box 1, box 2, box 3, box 4, box 5, box 6, box 7, box 8]
-
 const xWins = {
 
 'top': ['x', 'x', 'x', 4, 5, 6, 7, 8, 9],
@@ -80,6 +78,9 @@ const oWins = {
 'diagonal2': [1, 2, 'o', 4, 'o', 6, 'o', 8, 9]
 }
 
+const winCheck = function (game) {
+  if
+}
 // const boardArray = [$('#box1'), $('#box2'), $('#box3'), $('#box4'), $('#box5'),
 //   $('#box6'), $('#box7'), $('#box8'), $('#box9')
 // ]
