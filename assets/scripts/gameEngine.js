@@ -1,5 +1,5 @@
 // board array that pushing x and o to
-let game = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+let game = [1, 2, 3, 4, 5, 6, 7, 8,9]
 
 // pushing x and o
 const createx = function(index) {
@@ -28,7 +28,7 @@ const isX = function(array) {
 
 // Placing x and o on board and pushing to array game
 
-const placeLetter = function(index) {
+const placeLetter = function(index, event) {
   event.preventDefault() // preventing page refresh
   $('.userMessage').text('') // initial user message that goes away
   if ($(this).text() === 'X' || $(this).text() === 'O') {
@@ -53,6 +53,33 @@ const placeLetter = function(index) {
 
 // win scenarios
 
+
+[box 1, box 2, box 3, box 4, box 5, box 6, box 7, box 8]
+
+const xWins = {
+
+['x','x','x', 4, 5, 6, 7, 8, 9],
+[1, 2, 3, 'x', 'x', 'x', 7, 8, 9],
+[1, 2, 3, 4, 5, 6, 'x','x', 'x'],
+['x', 2, 3, 4, 'x', 6, 7, 8, 'x'],
+['x', 2, 3, 4, 'x', 6, 'x', 8, 9],
+[1, 'x', 3, 4, 'x', 6, 7, 'x', 9],
+[1, 2, 'x', 4, 5, 'x', 7, 8, 'x'],
+[1, 2, 'x', 4, 'x', 6, 'x', 8, 9]
+}
+
+const oWins = {
+
+['o','o','o', 4, 5, 6, 7, 8, 9],
+[1, 2, 3, 'o', 'o', 'o', 7, 8, 9],
+[1, 2, 3, 4, 5, 6, 'o','o', 'o'],
+['o', 2, 3, 4, 'o', 6, 7, 8, 'o'],
+['o', 2, 3, 4, 'o', 6, 'o', 8, 9],
+[1, 'o', 3, 4, 'o', 6, 7, 'o', 9],
+[1, 2, 'o', 4, 5, 'o', 7, 8, 'o'],
+[1, 2, 'o', 4, 'o', 6, 'o', 8, 9]
+}
+
 // const boardArray = [$('#box1'), $('#box2'), $('#box3'), $('#box4'), $('#box5'),
 //   $('#box6'), $('#box7'), $('#box8'), $('#box9')
 // ]
@@ -72,7 +99,7 @@ const clearBoard = function() {
 }
 
 const clearGameArray = function(){
-  game = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+  game = [1, 2, 3, 4, 5, 6, 7, 8,9]
 }
 
 const newGame = function(event) {
@@ -95,5 +122,5 @@ module.exports = {
   newGame,
   clearBoard,
   clearGameArray,
-  noRefresh
+  // noRefresh
 }
