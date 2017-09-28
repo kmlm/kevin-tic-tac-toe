@@ -40,8 +40,10 @@ const placeLetter = function(event) {
     $(this).text('O')
   }
   numTurns++
+  checkForWin()
   console.log(game)
   console.log(numTurns)
+  console.log(checkForWin())
 }
 //
 
@@ -51,59 +53,43 @@ const placeLetter = function(event) {
 
 // win scenarios
 
-const xWins = {
-  top: [0, 1, 2],
-  middle: [3, 4, 5],
-  bottom: [6, 7, 8],
-  diagonal1: [0, 4, 8],
-  vertLeft: [0, 3, 6],
-  vertCenter: [1, 4, 7],
-  vertRight: [2, 5, 8],
-  diagonal2: [2, 4, 6]
-}
-
-const oWins = {
-  top: [0, 1, 2],
-  middle: [3, 4, 5],
-  bottom: [6, 7, 8],
-  diagonal1: [0, 4, 8],
-  vertLeft: [0, 3, 6],
-  vertCenter: [1, 4, 7],
-  vertRight: [2, 5, 8],
-  diagonal2: [2, 4, 6]
-}
-
-// getting index of x or o from game array
-
-const getXIndexes = function() {
-  let Xindexes = [],
-    i = -1
-  while ((i = game.indexOf('x', i + 1)) != -1) {
-    Xindexes.push(i)
-  }
-  return Xindexes
-}
-
-const getOIndexes = function() {
-  let Oindexes = [],
-    i = -1
-  while ((i = game.indexOf('o', i + 1)) != -1) {
-    Oindexes.push(i)
-  }
-  return Oindexes
-}
+// const xWins = {
+//   top: [0, 1, 2],
+//   middle: [3, 4, 5],
+//   bottom: [6, 7, 8],
+//   diagonal1: [0, 4, 8],
+//   vertLeft: [0, 3, 6],
+//   vertCenter: [1, 4, 7],
+//   vertRight: [2, 5, 8],
+//   diagonal2: [2, 4, 6]
+// }
+//
+// const oWins = {
+//   top: [0, 1, 2],
+//   middle: [3, 4, 5],
+//   bottom: [6, 7, 8],
+//   diagonal1: [0, 4, 8],
+//   vertLeft: [0, 3, 6],
+//   vertCenter: [1, 4, 7],
+//   vertRight: [2, 5, 8],
+//   diagonal2: [2, 4, 6]
+// }
 
 // checking to see who won based on indexes
 
 const checkForWin = function () {
-  if (getXIndexes().toString() === xWins.top.toString() || getXIndexes().toString() === xWins.middle.toString() || getXIndexes().toString() === xWins.bottom.toString() ||
-    getXIndexes().toString() === xWins.diagonal1.toString() || getXIndexes().toString() === xWins.vertLeft.toString() || getXIndexes().toString() === xWins.vertCenter.toString() ||
-    getXIndexes().toString() === xWins.vertRight.toString() || getXIndexes().toString() === xWins.diagonal2.toString()) {
+  if ((game[0] === 'x' && game[1] === 'x' && game[2] === 'x') || (game[3] === 'x' && game[4] === 'x' && game[5] === 'x')
+      || (game[6] === 'x' && game[7] === 'x' && game[8] === 'x') || (game[0] === 'x' && game[4] === 'x' && game[8] === 'x')
+      || (game[0] === 'x' && game[3] === 'x' && game[6] === 'x') || (game[1] === 'x' && game[4] === 'x' && game[7] === 'x')
+      || (game[2] === 'x' && game[5] === 'x' && game[8] === 'x') ||(game[2] === 'x' && game[4] === 'x' && game[6] === 'x')
+    ){
     console.log('x wins')
     return
-  } else if (getOIndexes().toString() === oWins.top.toString() || getOIndexes().toString() === oWins.middle.toString() || getOIndexes().toString() === oWins.bottom.toString() ||
-    getOIndexes().toString() === oWins.diagonal1.toString() || getOIndexes().toString() === oWins.vertLeft.toString() || getOIndexes().toString() === oWins.vertCenter.toString() ||
-    getOIndexes().toString() === oWins.vertRight.toString() || getOIndexes().toString() === oWins.diagonal2.toString()) {
+  } else if ((game[0] === 'o' && game[1] === 'o' && game[2] === 'o') || (game[3] === 'o' && game[4] === 'o' && game[5] === 'o')
+      || (game[6] === 'o' && game[7] === 'o' && game[8] === 'o') || (game[0] === 'o' && game[4] === 'o' && game[8] === 'o')
+      || (game[0] === 'o' && game[3] === 'o' && game[6] === 'o') || (game[1] === 'o' && game[4] === 'o' && game[7] === 'o')
+      || (game[2] === 'o' && game[5] === 'o' && game[8] === 'o') ||(game[2] === 'o' && game[4] === 'o' && game[6] === 'o')
+  ){
     console.log('o wins')
     return
   }
@@ -128,19 +114,19 @@ const clearGameArray = function(){
   game = ['','','','','','','','','']
 }
 
-const clearNumTurn = function() {
-  numTurn = 0
+const clearNumTurns = function() {
+  numTurns = 0
 }
 const newGame = function(event) {
   event.preventDefault()
   clearGameArray()
   clearBoard()
-  clearNumTurn()
+  clearNumTurns()
   console.log(game)
+  console.log(numTurns)
 }
 
 // need a way to push game to storage before clearing everything
-
 
 module.exports = {
   createx,
@@ -150,8 +136,8 @@ module.exports = {
   newGame,
   clearBoard,
   clearGameArray,
-  clearNumTurn,
-  numTurn,
+  clearNumTurns,
+  numTurns,
   whoseTurn,
   // noRefresh,
   getXIndexes,
