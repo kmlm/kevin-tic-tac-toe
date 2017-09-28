@@ -132,33 +132,90 @@ const placeLetter = function(event) {
 // win scenarios
 
 
-const xWins = {
-
-'top': ['x', 'x', 'x', 4, 5, 6, 7, 8, 9],
-'middle': [1, 2, 3, 'x', 'x', 'x', 7, 8, 9],
-'bottom': [1, 2, 3, 4, 5, 6, 'x', 'x', 'x'],
-'diagonal1': ['x', 2, 3, 4, 'x', 6, 7, 8, 'x'],
-'vertLeft': ['x', 2, 3, 'x', 5, 6, 'x', 8, 9],
-'vertCenter': [1, 'x', 3, 4, 'x', 6, 7, 'x', 9],
-'vertRight': [1, 2, 'x', 4, 5, 'x', 7, 8, 'x'],
-'diagonal2': [1, 2, 'x', 4, 'x', 6, 'x', 8, 9]
-}
-
-const oWins = {
-
-'top': ['o', 'o', 'o', 4, 5, 6, 7, 8, 9],
-'middle': [1, 2, 3, 'o', 'o', 'o', 7, 8, 9],
-'bottom': [1, 2, 3, 4, 5, 6, 'o', 'o', 'o'],
-'diagonal1': ['o', 2, 3, 4, 'o', 6, 7, 8, 'o'],
-'vertLeft': ['o', 2, 3, 'o', 5, 6, 'o', 8, 9],
-'vertCenter': [1, 'o', 3, 4, 'o', 6, 7, 'o', 9],
-'vertRight': [1, 2, 'o', 4, 5, 'o', 7, 8, 'o'],
-'diagonal2': [1, 2, 'o', 4, 'o', 6, 'o', 8, 9]
-}
+// const xWins = {
+//
+// 'top': ['x', 'x', 'x', 4, 5, 6, 7, 8, 9],
+// 'middle': [1, 2, 3, 'x', 'x', 'x', 7, 8, 9],
+// 'bottom': [1, 2, 3, 4, 5, 6, 'x', 'x', 'x'],
+// 'diagonal1': ['x', 2, 3, 4, 'x', 6, 7, 8, 'x'],
+// 'vertLeft': ['x', 2, 3, 'x', 5, 6, 'x', 8, 9],
+// 'vertCenter': [1, 'x', 3, 4, 'x', 6, 7, 'x', 9],
+// 'vertRight': [1, 2, 'x', 4, 5, 'x', 7, 8, 'x'],
+// 'diagonal2': [1, 2, 'x', 4, 'x', 6, 'x', 8, 9]
+// }
+//
+// const oWins = {
+//
+// 'top': ['o', 'o', 'o', 4, 5, 6, 7, 8, 9],
+// 'middle': [1, 2, 3, 'o', 'o', 'o', 7, 8, 9],
+// 'bottom': [1, 2, 3, 4, 5, 6, 'o', 'o', 'o'],
+// 'diagonal1': ['o', 2, 3, 4, 'o', 6, 7, 8, 'o'],
+// 'vertLeft': ['o', 2, 3, 'o', 5, 6, 'o', 8, 9],
+// 'vertCenter': [1, 'o', 3, 4, 'o', 6, 7, 'o', 9],
+// 'vertRight': [1, 2, 'o', 4, 5, 'o', 7, 8, 'o'],
+// 'diagonal2': [1, 2, 'o', 4, 'o', 6, 'o', 8, 9]
+// }
 
 // const winCheck = function (game) {
 //   if
 // }
+
+const xWins = {
+
+  'top': [0,1,2],
+  'middle': [3,4,5],
+  'bottom': [6,7,8],
+  'diagonal1': [0,4,8],
+  'vertLeft': [0,3,6],
+  'vertCenter': [1, 4, 7],
+  'vertRight': [2,5,8],
+  'diagonal2': [2,4,6]
+  }
+
+const oWins = {
+  'top': [0,1,2],
+  'middle': [3,4,5],
+  'bottom': [6,7,8],
+  'diagonal1': [0,4,8],
+  'vertLeft': [0,3,6],
+  'vertCenter': [1, 4, 7],
+  'vertRight': [2,5,8],
+  'diagonal2': [2,4,6]
+}
+
+
+function getXIndexes(array, 'x') {
+    var Xindexes = [], i = -1;
+    while ((i = array.indexOf('x', i+1)) != -1){
+        indexes.push(i);
+    }
+    return Xindexes;
+}
+
+function getOIndexes(array, 'o') {
+    var Oindexes = [], i = -1;
+    while ((i = array.indexOf('o', i+1)) != -1){
+        indexes.push(i);
+    }
+    return Oindexes;
+}
+
+const checkForWin = function (array) {
+  getAllIndexes(array)
+  getOIndexes(array)
+  if (Xindexes === xWins.'top' || Xindexes === xWins.'middle' || Xindexes === xWins.'bottom' ||
+      Xindexes === xWins.'diagonal1' || Xindexes === xWins.'vertLeft' || Xindexes === xWins.'vertCenter' ||
+      Xindexes === xWins.'vertRight')|| Xindexes === xWins.'diagonal2'){
+        console.log ('x wins')
+        return
+      }
+  else if (Oindexes === xWins.'top' || Oindexes === xWins.'middle' || Oindexes === xWins.'bottom' ||
+      Oindexes === xWins.'diagonal1' || Oindexes === xWins.'vertLeft' || Oindexes === xWins.'vertCenter' ||
+      Oindexes === xWins.'vertRight')|| Oindexes === xWins.'diagonal2'){
+        console.log('o wins')
+        return
+}
+}
 // const boardArray = [$('#box1'), $('#box2'), $('#box3'), $('#box4'), $('#box5'),
 //   $('#box6'), $('#box7'), $('#box8'), $('#box9')
 // ]
