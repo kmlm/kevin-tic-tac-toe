@@ -15,17 +15,30 @@ $(() => {
 
 // Changing box to X or O
 
+// $(() => {
+//   $("#box1").on('click', gameEngine.placeLetter(0))
+//   $("#box2").on('click', gameEngine.placeLetter(1))
+//   $("#box3").on('click', gameEngine.placeLetter(2))
+//   $("#box4").on('click', gameEngine.placeLetter(3))
+//   $("#box5").on('click', gameEngine.placeLetter(4))
+//   $("#box6").on('click', gameEngine.placeLetter(5))
+//   $("#box7").on('click', gameEngine.placeLetter(6))
+//   $("#box8").on('click', gameEngine.placeLetter(7))
+//   $("#box9").on('click', gameEngine.placeLetter(8))
+// })
+
 $(() => {
-  $("#box1").on('click', gameEngine.placeLetter(0))
-  $("#box2").on('click', gameEngine.placeLetter(1))
-  $("#box3").on('click', gameEngine.placeLetter(2))
-  $("#box4").on('click', gameEngine.placeLetter(3))
-  $("#box5").on('click', gameEngine.placeLetter(4))
-  $("#box6").on('click', gameEngine.placeLetter(5))
-  $("#box7").on('click', gameEngine.placeLetter(6))
-  $("#box8").on('click', gameEngine.placeLetter(7))
-  $("#box9").on('click', gameEngine.placeLetter(8))
+  $("#box1").on('click', gameEngine.placeLetter)
+  $("#box2").on('click', gameEngine.placeLetter)
+  $("#box3").on('click', gameEngine.placeLetter)
+  $("#box4").on('click', gameEngine.placeLetter)
+  $("#box5").on('click', gameEngine.placeLetter)
+  $("#box6").on('click', gameEngine.placeLetter)
+  $("#box7").on('click', gameEngine.placeLetter)
+  $("#box8").on('click', gameEngine.placeLetter)
+  $("#box9").on('click', gameEngine.placeLetter)
 })
+
 
 $(() => {
   $('.new-game-button').on('click', gameEngine.newGame)

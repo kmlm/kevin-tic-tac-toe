@@ -1,5 +1,5 @@
 // board array that pushing x and o to
-let game = [1, 2, 3, 4, 5, 6, 7, 8,9]
+let game = []
 
 // pushing x and o
 const createx = function(index) {
@@ -28,18 +28,86 @@ const isX = function(array) {
 
 // Placing x and o on board and pushing to array game
 
-const placeLetter = function(index, event) {
+// const placeLetter = function(event) {
+//   event.preventDefault() // preventing page refresh
+//   $('.userMessage').text('') // initial user message that goes away
+//   if ($(this).text() === 'X' || $(this).text() === 'O') {
+//     return // only one letter per box
+//   }
+//   if (isX(game) === true) { // x on 0 and evens and o on odds
+//     createx(0) // pushes x to array
+//     $(this).text('X') // changing board letter to x
+//   } else {
+//     createo()
+//     $(this).text('O')
+//   }
+//   console.log('$(this) is', $(this).text())
+// }
+//
+
+
+
+
+const placeLetter = function(event) {
   event.preventDefault() // preventing page refresh
   $('.userMessage').text('') // initial user message that goes away
   if ($(this).text() === 'X' || $(this).text() === 'O') {
     return // only one letter per box
   }
   if (isX(game) === true) { // x on 0 and evens and o on odds
-    createx() // pushes x to array
+    createx(0) // pushes x to box1
     $(this).text('X') // changing board letter to x
-  } else {
-    createo()
+  } else if (isX(game) === true && this === '#box2') { // x on 0 and evens and o on odds
+    createx(1) // pushes x to box1
+    $(this).text('X') // changing board letter to x
+  } else if (isX(game) === true && $(this) === '#box3') { // x on 0 and evens and o on odds
+    createx(2) // pushes x to box1
+    $(this).text('X') // changing board letter to x
+  } else if (isX(game) === true && $(this) === '#box4') { // x on 0 and evens and o on odds
+    createx(3) // pushes x to box1
+    $(this).text('X') // changing board letter to x
+  } else if (isX(game) === true && this === '#box5') { // x on 0 and evens and o on odds
+    createx(4) // pushes x to box1
+    $(this).text('X') // changing board letter to x
+  } else if (isX(game) === true && $(this) === '#box6') { // x on 0 and evens and o on odds
+    createx(5) // pushes x to box1
+    $(this).text('X') // changing board letter to x
+  } else if (isX(game) === true && $(this) === '#box7') { // x on 0 and evens and o on odds
+    createx(6) // pushes x to box1
+    $(this).text('X') // changing board letter to x
+  } else if (isX(game) === true && $(this) === '#box8') { // x on 0 and evens and o on odds
+    createx(7) // pushes x to box1
+    $(this).text('X') // changing board letter to x
+  } else if (isX(game) === true && $(this) === '#box9') { // x on 0 and evens and o on odds
+    createx(8) // pushes x to box1
+    $(this).text('X') // changing board letter to x
+  } else if (isX(game) === false && $(this) === '#box1') {
+    createo(0)
     $(this).text('O')
+  } else if (isX(game) === false && $(this) === '#box2') { // x on 0 and evens and o on odds
+    createo(1) // pushes x to box1
+    $(this).text('O') // changing board letter to x
+  } else if (isX(game) === false && $(this) === '#box3') { // x on 0 and evens and o on odds
+    createo(2) // pushes x to box1
+    $(this).text('O') // changing board letter to x
+  } else if (isX(game) === false && $(this) === '#box4') { // x on 0 and evens and o on odds
+    createo(3) // pushes x to box1
+    $(this).text('O') // changing board letter to x
+  } else if (isX(game) === false && $(this) === '#box5') { // x on 0 and evens and o on odds
+    createo(4) // pushes x to box1
+    $(this).text('O') // changing board letter to x
+  } else if (isX(game) === false && $(this) === '#box6') { // x on 0 and evens and o on odds
+    createo(5) // pushes x to box1
+    $(this).text('O') // changing board letter to x
+  } else if (isX(game) === false && $(this) === '#box7') { // x on 0 and evens and o on odds
+    createo(6) // pushes x to box1
+    $(this).text('O') // changing board letter to x
+  } else if (isX(game) === false && $(this) === '#box8') { // x on 0 and evens and o on odds
+    createo(7) // pushes x to box1
+    $(this).text('O') // changing board letter to x
+  } else if (isX(game) === false && $(this) === '#box9') { // x on 0 and evens and o on odds
+    createo(8) // pushes x to box1
+    $(this).text('O') // changing board letter to x
   }
   console.log('$(this) is', $(this).text())
 }
@@ -78,9 +146,9 @@ const oWins = {
 'diagonal2': [1, 2, 'o', 4, 'o', 6, 'o', 8, 9]
 }
 
-const winCheck = function (game) {
-  if
-}
+// const winCheck = function (game) {
+//   if
+// }
 // const boardArray = [$('#box1'), $('#box2'), $('#box3'), $('#box4'), $('#box5'),
 //   $('#box6'), $('#box7'), $('#box8'), $('#box9')
 // ]
@@ -100,7 +168,7 @@ const clearBoard = function() {
 }
 
 const clearGameArray = function(){
-  game = [1, 2, 3, 4, 5, 6, 7, 8,9]
+  game = []
 }
 
 const newGame = function(event) {
