@@ -1,7 +1,7 @@
 
 // board array that pushing x and o to
 let game = ['', '', '', '', '', '', '', '', '']
-// let gameOver = false
+let gameOver = false
 let numTurns = 0
 
 // pushing x and o
@@ -30,11 +30,11 @@ const whoseTurn = function() {
 const placeLetter = function(event) {
   event.preventDefault() // preventing page refresh
   $('.userMessage').text('') // initial user message that goes away
-  // if (gameOver) { // whether clicks should be firing -- should not if game is over
-  //   console.log('did it work?')
-  //   $('.userMessage').text('This game is over. Click the button below to start a new game.')
-  //   return
-  // }
+  if (gameOver) { // whether clicks should be firing -- should not if game is over
+    console.log('did it work?')
+    $('.userMessage').text('This game is over. Click the button below to start a new game.')
+    return
+  }
   if ($(this).text() === 'X' || $(this).text() === 'O') {
     return // only one letter per box
   }
@@ -127,5 +127,6 @@ module.exports = {
   clearGameArray,
   clearNumTurns,
   numTurns,
-  whoseTurn
+  whoseTurn,
+  gameOver
 }
