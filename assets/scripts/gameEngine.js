@@ -100,7 +100,6 @@ const oWins = {
   diagonal2: [2, 4, 6]
 }
 
-
 // const getXIndexes = function(array, val) {
 //   let Xindexes = [],
 //     i = -1
@@ -131,21 +130,21 @@ const getXIndexes = function() {
 const getOIndexes = function() {
   let Oindexes = [],
     i = -1
-  while ((i = game.indexOf('x', i + 1)) != -1) {
+  while ((i = game.indexOf('o', i + 1)) != -1) {
     Oindexes.push(i)
   }
   return Oindexes
 }
 
 const checkForWin = function () {
-  if (getXIndexes === xWins.top || getXIndexes === xWins.middle || getXIndexes === xWins.bottom ||
-    getXIndexes === xWins.diagonal1 || getXIndexes === xWins.vertLeft || getXIndexes === xWins.vertCenter ||
-    getXIndexes === xWins.vertRight || getXIndexes === xWins.diagonal2) {
+  if (getXIndexes() === xWins.top || getXIndexes() === xWins.middle || getXIndexes() === xWins.bottom ||
+    getXIndexes() === xWins.diagonal1 || getXIndexes() === xWins.vertLeft || getXIndexes() === xWins.vertCenter ||
+    getXIndexes() === xWins.vertRight || getXIndexes() === xWins.diagonal2) {
     console.log('x wins')
     return
-  } else if (getOIndexes === oWins.top || getOIndexes === oWins.middle || getOIndexes === oWins.bottom ||
-    getOIndexes === oWins.diagonal1 || getOIndexes === oWins.vertLeft || getOIndexes === oWins.vertCenter ||
-    getOIndexes === oWins.vertRight || getOIndexes === oWins.diagonal2) {
+  } else if (getOIndexes() === oWins.top || getOIndexes() === oWins.middle || getOIndexes() === oWins.bottom ||
+    getOIndexes() === oWins.diagonal1 || getOIndexes() === oWins.vertLeft || getOIndexes() === oWins.vertCenter ||
+    getOIndexes() === oWins.vertRight || getOIndexes() === oWins.diagonal2) {
     console.log('o wins')
     return
   }
