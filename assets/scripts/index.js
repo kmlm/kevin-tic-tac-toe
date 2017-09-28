@@ -33,8 +33,13 @@ $(() => {
   $('.new-game-button').on('click', gameEngine.newGame)
 })
 
+
+// API
+
 $(() => {
  $('#new-user-form').on('submit', events.onSignUp)
+ // $('#sign-out').on('submit', events.onSignOut)
+
  })
 
 // use require with a reference to bundle the file and use it in this file
