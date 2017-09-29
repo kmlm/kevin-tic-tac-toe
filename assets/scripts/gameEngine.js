@@ -9,6 +9,7 @@ let numTurns = 0
 let notSignedIn = true
 let addtoGameIndex
 let addtoGameValue
+let addingGameValueFunction
 
 
 // pushing x and o
@@ -44,7 +45,7 @@ const placeLetter = function(event) {
   //    return
   //  }
   $('#message').hide() // hides sign in successfull message when first box clicked
-  // events.createGame()
+  events.createGame()
   $('.userMessage').text('') // initial user instruction that goes away
   if (gameOver) { // whether clicks should be firing -- should not if game is over
     $('.userMessage').text('This game is over. Click the button below to start a new game.')
@@ -64,14 +65,14 @@ const placeLetter = function(event) {
   addtoGameIndex = $(this).data('index')
   addtoGameValue = $(this).text()
   checkForWin()
-  // events.addToGame()
-  onGameUpdate(addtoGameIndex,addtoGameValue,gameOver)
+  addingGameValueFunction = onGameUpdate(addtoGameIndex,addtoGameValue,gameOver)
   console.log(game)
   console.log(numTurns)
   console.log(gameOver)
-  console.log(addtoGameValue)
   console.log(addtoGameIndex)
-  console.log(onGameUpdate())
+  console.log(addtoGameValue)
+  console.log(addingGameValueFunction)
+  events.addToGame()
 }
 
 // ENDING GAME
@@ -149,8 +150,8 @@ const onGameUpdate = function (index, value, over) {
       'over': over
     }
   }
-  return data
   console.log(data)
+  return data
 }
 
 // need a way to push game to storage before clearing everything
@@ -167,5 +168,6 @@ module.exports = {
   numTurns,
   whoseTurn,
   gameOver,
-  notSignedIn
+  notSignedIn,
+  addingGameValueFunction
 }
