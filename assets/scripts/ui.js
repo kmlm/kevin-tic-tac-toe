@@ -57,11 +57,23 @@ const signOutSuccess = function () {
 //   $('.userMessage').text('You are not signed in')
 // }
 
+const changePasswordSuccess = function (data) {
+  $('#password-change-message').text('Changed password sucessfully')
+  console.log('Changed password sucessfully')
+}
+
+const changePasswordFailure = function (error) {
+  console.log('Unable to change password')
+  $('#password-change-message').text('Unable to change password')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
-  signOutSuccess
-  // signOutFailure
+  signOutSuccess,
+  // signOutFailure,
+  changePasswordSuccess,
+  changePasswordFailure
 }
