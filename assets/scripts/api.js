@@ -60,11 +60,23 @@ const addToGame = function (data) {
     })
 }
 
+const showAllGames = function (data){
+  return $.ajax({
+    url: config.apiOrigin + 'games/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
   newGame,
-  addToGame
+  addToGame,
+  showAllGames
 }
