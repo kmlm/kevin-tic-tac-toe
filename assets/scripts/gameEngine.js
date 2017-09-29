@@ -1,4 +1,6 @@
 
+const events = require('./events')
+
 // board array that pushing x and o to
 let game = ['', '', '', '', '', '', '', '', '']
 let gameOver = false
@@ -30,6 +32,7 @@ const whoseTurn = function() {
 const placeLetter = function(event) {
   event.preventDefault() // preventing page refresh
   $('#message').hide() // hides sign in successfull message when first box clicked
+  events.createGame()
   $('.userMessage').text('') // initial user instruction that goes away
   if (gameOver) { // whether clicks should be firing -- should not if game is over
     console.log('did it work?')

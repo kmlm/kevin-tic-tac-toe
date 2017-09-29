@@ -25,6 +25,7 @@ $(() => {
 // Reset with new game button
 $(() => {
   $('.new-game-button').on('click', gameEngine.newGame)
+
 })
 
 

@@ -65,9 +65,9 @@ const signOutSuccess = function () {
 
 const changePasswordSuccess = function (data) {
   $('#password-change-message').text('Changed password sucessfully')
-  $('#change-password-message').hide()
-  $('#change-password-form').hide()
-  $('#message').hide()
+  // $('#change-password-message').hide()
+  // $('#change-password-form').hide()
+  // $('#message').hide()
   console.log('Changed password sucessfully')
 }
 
@@ -75,6 +75,19 @@ const changePasswordFailure = function (error) {
   console.log('Unable to change password')
   $('#password-change-message').text('Unable to change password')
 }
+
+
+const createGameSuccess = function (data){
+  store.game = data
+  console.log(data)
+  console.log('tester')
+}
+
+
+const createGameFailure = function (error) {
+  console.log (error)
+}
+
 
 module.exports = {
   signUpSuccess,
@@ -84,5 +97,7 @@ module.exports = {
   signOutSuccess,
   // signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  createGameSuccess,
+  createGameFailure
 }

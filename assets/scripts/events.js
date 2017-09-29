@@ -1,6 +1,7 @@
 const getFormFields = require('/Users/n0252667/wdi/projects/kevin-tic-tac-toe/lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const gameEngine = require('./gameEngine')
 
 const onSignUp = function(event) {
   const data = getFormFields(this)
@@ -33,9 +34,18 @@ const onChangePassword = function(event) {
     .catch(ui.changePasswordFailure)
 }
 
+const createGame = function() {
+  const data = gameEngine.game
+  api.newGame(data)
+  .then(ui.createGameSuccess)
+  .catch(ui.createGameFailure)
+  console.log('api success')
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onChangePassword
+  onChangePassword,
+  createGame
 }
