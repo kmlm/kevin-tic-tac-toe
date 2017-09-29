@@ -7,10 +7,14 @@ let game = ['', '', '', '', '', '', '', '', '']
 let gameOver = false
 let numTurns = 0
 let notSignedIn = true
+let addtoGameIndex
+let addtoGameValue
+
 
 // pushing x and o
 const createx = function(index) {
   game[index] = 'x'
+
   console.log(game)
 }
 
@@ -40,10 +44,9 @@ const placeLetter = function(event) {
   //    return
   //  }
   $('#message').hide() // hides sign in successfull message when first box clicked
-  events.createGame()
+  // events.createGame()
   $('.userMessage').text('') // initial user instruction that goes away
   if (gameOver) { // whether clicks should be firing -- should not if game is over
-    console.log('did it work?')
     $('.userMessage').text('This game is over. Click the button below to start a new game.')
     return
   }
@@ -58,11 +61,15 @@ const placeLetter = function(event) {
     $(this).text('O')
   }
   numTurns++
+  addtoGameIndex = $(this).data('index')
+  addtoGameValue = $(this).text()
   checkForWin()
-  events.addToGame()
+  // events.addToGame()
   console.log(game)
   console.log(numTurns)
   console.log(gameOver)
+  console.log(addtoGameValue)
+  console.log(addtoGameIndex)
 }
 
 // ENDING GAME
