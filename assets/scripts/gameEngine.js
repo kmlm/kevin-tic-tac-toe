@@ -114,6 +114,7 @@ const newGame = function(event) {
   $('.userMessage').text('')
   console.log(game)
   console.log(numTurns)
+  gameOver = false
 }
 
 // need a way to push game to storage before clearing everything

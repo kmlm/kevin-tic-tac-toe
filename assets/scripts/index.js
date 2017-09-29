@@ -34,6 +34,7 @@ $(() => {
  $('#new-user-form').on('submit', events.onSignUp)
  $('#sign-in-form').on('submit', events.onSignIn)
  $('#sign-out').on('submit', events.onSignOut)
+
  })
 
 // use require with a reference to bundle the file and use it in this file

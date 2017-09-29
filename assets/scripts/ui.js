@@ -44,14 +44,24 @@ const signOutSuccess = function () {
   $('#new-user-form').show()
   $('#sign-up-message').show()
   $('#sign-out-input').hide()
+  $('#change-password-button').hide()
   gameEngine.clearGameArray()
   gameEngine.clearBoard()
+  gameEngine.clearNumTurns()
+  $('.userMessage').text('')
+  gameEngine.gameOver = false
+  gameEngine.placLetter()
 }
+
+// const signOutFailure = function (error) {
+//   $('.userMessage').text('You are not signed in')
+// }
 
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
-  signOutSuccess,
+  signOutSuccess
+  // signOutFailure
 }
