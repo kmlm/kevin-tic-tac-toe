@@ -47,7 +47,7 @@
 //   .then(ui.createGameSuccess)
 //   .catch(ui.createGameFailure)
 // }
-//
+// //
 // // const allGames = function (event){
 // //   event.preventDefault()
 // //   const data = gameEngine.game

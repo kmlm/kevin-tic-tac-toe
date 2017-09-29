@@ -65,11 +65,13 @@ const placeLetter = function(event) {
   addtoGameValue = $(this).text()
   checkForWin()
   // events.addToGame()
+  onGameUpdate(addtoGameIndex,addtoGameValue,gameOver)
   console.log(game)
   console.log(numTurns)
   console.log(gameOver)
   console.log(addtoGameValue)
   console.log(addtoGameIndex)
+  console.log(onGameUpdate())
 }
 
 // ENDING GAME
@@ -134,6 +136,21 @@ const newGame = function(event) {
   console.log(game)
   console.log(numTurns)
   gameOver = false
+}
+
+// Adding each move to api
+const onGameUpdate = function (index, value, over) {
+  const data = {
+    'game': {
+      'cell': {
+        'index': index,
+        'value': value
+      },
+      'over': over
+    }
+  }
+  return data
+  console.log(data)
 }
 
 // need a way to push game to storage before clearing everything
