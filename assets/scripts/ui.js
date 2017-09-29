@@ -26,6 +26,7 @@ const signInSuccess = function (data) {
   $('#new-user-form').hide()
   $('#sign-up-message').hide()
   $('#sign-out-input').show()
+  $('#change-password-button').show()
 }
 
 const signInFailure = function (error) {
