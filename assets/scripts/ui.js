@@ -43,14 +43,20 @@ const signOutSuccess = function () {
   $('#sign-in-message').show()
   $('#new-user-form').show()
   $('#sign-up-message').show()
+  $('.password-change').show()
+  $('#change-password-message').show()
+  $('#change-password-form').show()
+  $('#message').hide()
   $('#sign-out-input').hide()
   $('#change-password-button').hide()
+  $('#password-change-message').hide()
   gameEngine.clearGameArray()
   gameEngine.clearBoard()
   gameEngine.clearNumTurns()
   $('.userMessage').text('')
   gameEngine.gameOver = false
-  gameEngine.placLetter()
+  // gameEngine.placeLetter()
+  $('#message').text('')
 }
 
 // const signOutFailure = function (error) {
@@ -59,6 +65,9 @@ const signOutSuccess = function () {
 
 const changePasswordSuccess = function (data) {
   $('#password-change-message').text('Changed password sucessfully')
+  $('#change-password-message').hide()
+  $('#change-password-form').hide()
+  $('#message').hide()
   console.log('Changed password sucessfully')
 }
 
