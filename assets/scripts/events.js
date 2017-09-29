@@ -34,7 +34,8 @@ const onChangePassword = function(event) {
     .catch(ui.changePasswordFailure)
 }
 
-const createGame = function() {
+const createGame = function(event) {
+event.preventDefault()
   console.log('create ran')
   const data = gameEngine.game
   api.newGame(data)

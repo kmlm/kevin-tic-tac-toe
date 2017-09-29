@@ -11,7 +11,7 @@ let notSignedIn = true
 let addtoGameIndex
 let addtoGameValue
 let addingGameValueFunction
-let newGameClicked = false
+// let newGameClicked = false
 
 // pushing x and o
 const createx = function(index) {
@@ -39,6 +39,10 @@ const whoseTurn = function() {
 
 const placeLetter = function(event) {
   event.preventDefault() // preventing page refresh
+  // if (newGameClicked === false){
+  //   return false
+  // }
+
   // if (notSignedIn) {
   //   $('.userMessage').text('Please Sign In to play a game')
   //    console.log ('not signed in')
@@ -46,7 +50,6 @@ const placeLetter = function(event) {
   //    return
   //  }
   $('#message').hide() // hides sign in successfull message when first box clicked
-  events.createGame()
   $('.userMessage').text('') // initial user instruction that goes away
   if (gameOver) { // whether clicks should be firing -- should not if game is over
     $('.userMessage').text('This game is over. Click the button below to start a new game.')
@@ -87,7 +90,6 @@ const addToGame = function (data){
   .catch(ui.addToGameFailure)
   console.log(data)
 }
-
 
 // ENDING GAME
 
