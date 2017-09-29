@@ -11,6 +11,7 @@ let notSignedIn = true
 let addtoGameIndex
 let addtoGameValue
 let addingGameValueFunction
+let newGameClicked = false
 
 // pushing x and o
 const createx = function(index) {
