@@ -82,7 +82,6 @@ const changePasswordFailure = function (error) {
 const createGameSuccess = function (data){
   store.game = data
   console.log(data)
-  console.log('tester')
   console.log(store)
 }
 
@@ -92,12 +91,13 @@ const createGameFailure = function (error) {
 }
 
 const addToGameSuccess = function (data){
+  console.log('ui success ran')
   store.game = data
   console.log(data)
-  console.log('tester')
 }
 
 const addToGameFailure = function (error){
+  console.log('ui failure ran')
   console.log (error)
 }
 

@@ -35,18 +35,11 @@ const onChangePassword = function(event) {
 }
 
 const createGame = function() {
+  console.log('create ran')
   const data = gameEngine.game
   api.newGame(data)
   .then(ui.createGameSuccess)
   .catch(ui.createGameFailure)
-}
-
-const addToGame = function (){
-  const data = gameEngine.addingGameValueFunction
-  api.addingMoves(data)
-  .then(ui.addToGameSuccess)
-  .catch(ui.addToGameFailure)
-  console.log(data)
 }
 
 const allGames = function (event){
@@ -63,6 +56,5 @@ module.exports = {
   onSignOut,
   onChangePassword,
   createGame,
-  addToGame,
   allGames
 }

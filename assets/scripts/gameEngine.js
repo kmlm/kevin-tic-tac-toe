@@ -1,6 +1,7 @@
 
 const events = require('./events')
-const ui= require('./ui')
+const ui = require('./ui')
+const api = require('./api')
 
 // board array that pushing x and o to
 let game = ['', '', '', '', '', '', '', '', '']
@@ -10,7 +11,6 @@ let notSignedIn = true
 let addtoGameIndex
 let addtoGameValue
 let addingGameValueFunction
-
 
 // pushing x and o
 const createx = function(index) {
@@ -72,10 +72,24 @@ const placeLetter = function(event) {
   console.log(addtoGameIndex)
   console.log(addtoGameValue)
   console.log(addingGameValueFunction)
-  events.addToGame()
+  addToGame(addingGameValueFunction)
+  console.log(addToGame(addingGameValueFunction))
 }
 
+
+// ADDING MOVE TO CREATED GAME IN API
+
+const addToGame = function (data){
+  console.log('add ran')
+  api.addingMoves(data)
+  .then(ui.addToGameSuccess)
+  .catch(ui.addToGameFailure)
+  console.log(data)
+}
+
+
 // ENDING GAME
+
 
 // checking to see who won based on indexes
 
@@ -169,5 +183,6 @@ module.exports = {
   whoseTurn,
   gameOver,
   notSignedIn,
-  addingGameValueFunction
+  addingGameValueFunction,
+  addToGame
 }

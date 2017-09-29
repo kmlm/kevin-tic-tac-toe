@@ -28,6 +28,7 @@ const signOut = function () {
 }
 
 const changePassword = function (data) {
+  console.log(data)
   return $.ajax({
     url: config.apiOrigin + 'change-password/' + store.user.id,
     method: 'PATCH',
@@ -50,9 +51,8 @@ const newGame = function (data) {
 }
 
 const addingMoves = function (data) {
-  console.log('Store is ', store.user.game)
     return $.ajax({
-      url: config.apiOrigin + 'games/' + store.user.game.id,
+      url: config.apiOrigin + 'games/' + store.game.id,
       method: 'PATCH',
       headers: {
         Authorization: 'Token token=' + store.user.token
