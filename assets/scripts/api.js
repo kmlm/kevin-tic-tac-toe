@@ -50,8 +50,9 @@ const newGame = function (data) {
 }
 
 const addingMoves = function (data) {
+  console.log('Store is ', store.user.game)
     return $.ajax({
-      url: config.apiOrigin + 'games/' + store.game.id,
+      url: config.apiOrigin + 'games/' + store.user.game.id,
       method: 'PATCH',
       headers: {
         Authorization: 'Token token=' + store.user.token
@@ -60,16 +61,15 @@ const addingMoves = function (data) {
     })
 }
 
-// const showAllGames = function (data){
-//   return $.ajax({
-//     url: config.apiOrigin + 'games/',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
-//   })
-// }
+const showAllGames = function (){
+  return $.ajax({
+    url: config.apiOrigin + 'games/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+  })
+}
 
 module.exports = {
   signUp,
@@ -77,6 +77,6 @@ module.exports = {
   signOut,
   changePassword,
   newGame,
-  addingMoves
-  // showAllGames
+  addingMoves,
+  showAllGames
 }

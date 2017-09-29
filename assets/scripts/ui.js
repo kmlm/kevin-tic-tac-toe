@@ -92,7 +92,7 @@ const createGameFailure = function (error) {
 }
 
 const addToGameSuccess = function (data){
-store.game = data
+  store.game = data
   console.log(data)
   console.log('tester')
 }
@@ -101,15 +101,14 @@ const addToGameFailure = function (error){
   console.log (error)
 }
 
-// const showAllGamesSuccess = function (data){
-//   data = store.game
-//   console.log(data)
-//   console.log('tester')
-// }
-//
-// const showAllGamesFailure = function (error){
-//   console.log(error)
-// }
+const showAllGamesSuccess = function (data){
+  console.log('data is', data)
+  console.log('tester')
+}
+
+const showAllGamesFailure = function (error){
+  console.log(error)
+}
 
 module.exports = {
   signUpSuccess,
@@ -123,7 +122,7 @@ module.exports = {
   createGameSuccess,
   createGameFailure,
   addToGameSuccess,
-  addToGameFailure
-  // showAllGamesSuccess,
-  // showAllGamesFailure
+  addToGameFailure,
+  showAllGamesSuccess,
+  showAllGamesFailure
 }

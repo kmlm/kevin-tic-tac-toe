@@ -46,15 +46,16 @@ const addToGame = function (){
   api.addingMoves(data)
   .then(ui.addToGameSuccess)
   .catch(ui.addToGameFailure)
+  console.log(data)
 }
 
-// const allGames = function (event){
-//   event.preventDefault()
-//   const data = gameEngine.game
-//   api.showAllGames(data)
-//   .then(ui.showAllGamesSuccess)
-//   .catch(ui.showAllGamesFailure)
-// }
+const allGames = function (event){
+  event.preventDefault()
+  console.log ('all games worked')
+  api.showAllGames()
+  .then(ui.showAllGamesSuccess)
+  .catch(ui.showAllGamesFailure)
+}
 
 module.exports = {
   onSignUp,
@@ -62,6 +63,6 @@ module.exports = {
   onSignOut,
   onChangePassword,
   createGame,
-  addToGame
-  // allGames
+  addToGame,
+  allGames
 }
