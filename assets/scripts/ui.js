@@ -83,6 +83,7 @@ const createGameSuccess = function (data){
   store.game = data
   console.log(data)
   console.log('tester')
+  console.log(store)
 }
 
 
@@ -90,6 +91,15 @@ const createGameFailure = function (error) {
   console.log (error)
 }
 
+const addToGameSuccess = function (){
+store.game.cells[1]= 'x'
+  console.log(data)
+  console.log('tester')
+}
+
+const addToGameFailure = function (){
+  console.log (error)
+}
 
 module.exports = {
   signUpSuccess,
@@ -101,5 +111,7 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   createGameSuccess,
-  createGameFailure
+  createGameFailure,
+  addToGameSuccess,
+  addToGameFailure
 }

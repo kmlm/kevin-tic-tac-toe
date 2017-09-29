@@ -41,10 +41,18 @@ const createGame = function() {
   .catch(ui.createGameFailure)
 }
 
+const addToGame = function (){
+  const data = gameEngine.game
+  api.addingMoves(data)
+  .then(ui.createGameSuccess)
+  .catch(ui.createGameFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
   onChangePassword,
-  createGame
+  createGame,
+  addToGame
 }

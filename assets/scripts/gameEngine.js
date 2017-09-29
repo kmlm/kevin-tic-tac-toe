@@ -33,12 +33,12 @@ const whoseTurn = function() {
 
 const placeLetter = function(event) {
   event.preventDefault() // preventing page refresh
-  if (notSignedIn) {
-    $('.userMessage').text('Please Sign In to play a game')
-     console.log ('not signed in')
-     console.log(notSignedIn)
-     return
-   }
+  // if (notSignedIn) {
+  //   $('.userMessage').text('Please Sign In to play a game')
+  //    console.log ('not signed in')
+  //    console.log(notSignedIn)
+  //    return
+  //  }
   $('#message').hide() // hides sign in successfull message when first box clicked
   events.createGame()
   $('.userMessage').text('') // initial user instruction that goes away
@@ -59,6 +59,7 @@ const placeLetter = function(event) {
   }
   numTurns++
   checkForWin()
+  events.addToGame()
   console.log(game)
   console.log(numTurns)
   console.log(gameOver)
