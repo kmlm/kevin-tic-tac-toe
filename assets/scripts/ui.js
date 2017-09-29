@@ -102,7 +102,8 @@ const addToGameFailure = function (error){
 }
 
 const showAllGamesSuccess = function (data){
-  console.log('data is', data)
+  $('.userMessage').text('You have played ' + data.games.length +' games!')
+  console.log('data is', data.games.length)
   console.log('tester')
 }
 
