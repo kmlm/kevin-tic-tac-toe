@@ -19,6 +19,7 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   console.log(data)
   $('#message').text('Signed in sucessfully')
+  gameEngine.notSignedIn = false
   store.user = data.user
   console.log(store.user)
   $('#sign-in-form').hide()
@@ -27,6 +28,7 @@ const signInSuccess = function (data) {
   $('#sign-up-message').hide()
   $('#sign-out-input').show()
   $('#change-password-button').show()
+  console.log(gameEngine.notSignedIn)
 }
 
 const signInFailure = function (error) {

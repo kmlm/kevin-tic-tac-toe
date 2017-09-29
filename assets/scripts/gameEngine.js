@@ -1,10 +1,12 @@
 
 const events = require('./events')
+const ui= require('./ui')
 
 // board array that pushing x and o to
 let game = ['', '', '', '', '', '', '', '', '']
 let gameOver = false
 let numTurns = 0
+let notSignedIn = true
 
 // pushing x and o
 const createx = function(index) {
@@ -31,6 +33,12 @@ const whoseTurn = function() {
 
 const placeLetter = function(event) {
   event.preventDefault() // preventing page refresh
+  if (notSignedIn) {
+    $('.userMessage').text('Please Sign In to play a game')
+     console.log ('not signed in')
+     console.log(notSignedIn)
+     return
+   }
   $('#message').hide() // hides sign in successfull message when first box clicked
   events.createGame()
   $('.userMessage').text('') // initial user instruction that goes away
@@ -133,5 +141,6 @@ module.exports = {
   clearNumTurns,
   numTurns,
   whoseTurn,
-  gameOver
+  gameOver,
+  notSignedIn
 }

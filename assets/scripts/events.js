@@ -39,7 +39,6 @@ const createGame = function() {
   api.newGame(data)
   .then(ui.createGameSuccess)
   .catch(ui.createGameFailure)
-  console.log('api success')
 }
 
 module.exports = {
