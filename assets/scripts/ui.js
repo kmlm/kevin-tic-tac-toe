@@ -86,17 +86,17 @@ const createGameSuccess = function (data){
 const createGameFailure = function (error) {
   console.log (error)
 }
-//
-// const addToGameSuccess = function (data){
-//   console.log('ui success ran')
-//   store.game = data
-//   console.log(data)
-// }
-//
-// const addToGameFailure = function (error){
-//   console.log('ui failure ran')
-//   console.log (error)
-// }
+
+const addToGameSuccess = function (data){
+  console.log('ui success ran')
+  store.game = data
+  console.log(data)
+}
+
+const addToGameFailure = function (error){
+  console.log('ui failure ran')
+  console.log (error)
+}
 
 const showAllGamesSuccess = function (data){
   $('#numGames-message').show()
@@ -120,8 +120,8 @@ module.exports = {
   changePasswordFailure,
   createGameSuccess,
   createGameFailure,
-  // addToGameSuccess,
-  // addToGameFailure,
+  addToGameSuccess,
+  addToGameFailure,
   showAllGamesSuccess,
   showAllGamesFailure
 }

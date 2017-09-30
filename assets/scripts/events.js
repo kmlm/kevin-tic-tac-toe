@@ -39,7 +39,7 @@ event.preventDefault()
 if ($('.userMessage').text() !== 'X goes first so click a square to begin' && $('.userMessage').text() !== ''
         && $('.userMessage').text() !== 'X WINS!'
         && $('.userMessage').text() !== 'O WINS!'
-        && $('.userMessage').text() !== 'This game is over. Click the button below to start a new game or Sign Out'
+        && $('.userMessage').text() !== 'This game is over. Click the button above to start a new game or Sign Out'
         && $('.userMessage').text() !== 'Tic Tac Tie!'){
   return // need to be signed in to play -- looks at messages to determine to make global
 }
