@@ -15,6 +15,7 @@ const signUpSuccess = function (data) {
 const signUpFailure = function (error) {
   console.error(error)
   $('#message').text('Unable to sign up with that information')
+  document.getElementById('new-user-form').reset()
 }
 
 const signInSuccess = function (data) {
@@ -35,6 +36,7 @@ const signInSuccess = function (data) {
 const signInFailure = function (error) {
   console.error(error)
   $('#message').text('Invalid Password / Username')
+  document.getElementById('sign-in-form').reset()
 }
 
 const signOutSuccess = function () {
@@ -75,6 +77,7 @@ const changePasswordSuccess = function (data) {
 const changePasswordFailure = function (error) {
   console.log('Unable to change password')
   $('#change-password-message').text('Unable to change password. Please verify you are signed in and try again.')
+  document.getElementById('change-password-form').reset()
 }
 
 const createGameSuccess = function (data){

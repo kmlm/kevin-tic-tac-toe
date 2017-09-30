@@ -91,7 +91,6 @@ const addToGame = function (data){
 
 // ENDING GAME
 
-
 // checking to see who won based on indexes
 
 const checkForWin = function() {
