@@ -49,10 +49,11 @@ const placeLetter = function(event) {
   //    console.log(notSignedIn)
   //    return
   //  }
+  $('#password-change-message').hide()
   $('#message').hide() // hides sign in successfull message when first box clicked
   $('.userMessage').text('') // initial user instruction that goes away
   if (gameOver) { // whether clicks should be firing -- should not if game is over
-    $('.userMessage').text('This game is over. Click the button below to start a new game.')
+    $('.userMessage').text('This game is over. Click the button below to start a new game or Sign Out')
     return
   }
   if ($(this).text() === 'X' || $(this).text() === 'O') {
