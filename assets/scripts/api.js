@@ -52,7 +52,7 @@ const newGame = function (data) {
 }
 
 const addingMoves = function (data) {
-  console.log(store.game)
+  console.log(store)
     return $.ajax({
       url: config.apiOrigin + 'games/' + store.game.id,
       method: 'PATCH',

@@ -1,5 +1,6 @@
 const store = require('./store')
 const gameEngine = require('./gameEngine')
+const events =require('./events')
 
 const signUpSuccess = function (data) {
   console.log(data)
@@ -31,9 +32,9 @@ const signInSuccess = function (data) {
   $('#new-user-form').hide()
   $('#sign-up-message').hide()
   $('#sign-out-input').show()
-  // $('password-change').css('display', 'inherit')
   $('.userMessage').text('X goes first so click a square to begin')
   document.getElementById('sign-in-form').reset()
+  // events.createGame() -- need a way to createGame on sign in
 }
 
 const signInFailure = function (error) {
@@ -82,6 +83,7 @@ const changePasswordFailure = function (error) {
 }
 
 const createGameSuccess = function (data){
+  console.log('create game ran')
   console.log('data is',data)
   store.game = data
   console.log(store)
