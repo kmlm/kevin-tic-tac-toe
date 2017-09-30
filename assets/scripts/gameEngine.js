@@ -39,7 +39,11 @@ const whoseTurn = function() {
 const placeLetter = function(event) {
   event.preventDefault() // preventing page refresh
 
-  if ($('.userMessage').text() !== 'X goes first so click a square to begin' && $('.userMessage').text() !== '' ){
+  if ($('.userMessage').text() !== 'X goes first so click a square to begin' && $('.userMessage').text() !== ''
+          && $('.userMessage').text() !== 'X WINS!'
+          && $('.userMessage').text() !== 'O WINS!'
+          && $('.userMessage').text() !== 'This game is over. Click the button below to start a new game or Sign Out'
+          && $('.userMessage').text() !== 'Tic Tac Tie!'){
     return // need to be signed in to play -- looks at messages to determine to make global
   }
   $('#password-change-message').hide()
