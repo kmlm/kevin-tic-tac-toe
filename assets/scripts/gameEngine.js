@@ -50,7 +50,7 @@ const placeLetter = function(event) {
   $('#message').hide() // hides sign in successfull message when first box clicked
   $('.userMessage').text('') // initial user instruction that goes away
   if (gameOver) { // whether clicks should be firing -- should not if game is over
-    $('.userMessage').text('This game is over. Click the button below to start a new game or Sign Out')
+    $('.userMessage').text('This game is over. Click the button above to start a new game or Sign Out')
     return
   }
   if ($(this).text() === 'X' || $(this).text() === 'O') {
@@ -74,20 +74,20 @@ const placeLetter = function(event) {
   console.log(addtoGameIndex)
   console.log(addtoGameValue)
   console.log(addingGameValueFunction)
-  // addToGame(addingGameValueFunction)
-  // console.log(addToGame(addingGameValueFunction))
+  addToGame(addingGameValueFunction)
+  console.log(addToGame(addingGameValueFunction))
 }
 
 
 // ADDING MOVE TO CREATED GAME IN API
 
-// const addToGame = function (data){
-//   console.log('add ran')
-//   api.addingMoves(data)
-//   .then(ui.addToGameSuccess)
-//   .catch(ui.addToGameFailure)
-//   console.log(data)
-// }
+const addToGame = function (data){
+  console.log('add ran')
+  api.addingMoves(data)
+  .then(ui.addToGameSuccess)
+  .catch(ui.addToGameFailure)
+  console.log(data)
+}
 
 // ENDING GAME
 
@@ -147,7 +147,7 @@ const newGame = function(event) {
   if ($('.userMessage').text() !== 'X goes first so click a square to begin' && $('.userMessage').text() !== ''
           && $('.userMessage').text() !== 'X WINS!'
           && $('.userMessage').text() !== 'O WINS!'
-          && $('.userMessage').text() !== 'This game is over. Click the button below to start a new game or Sign Out'
+          && $('.userMessage').text() !== 'This game is over. Click the button above to start a new game or Sign Out'
           && $('.userMessage').text() !== 'Tic Tac Tie!'){
     return // need to be signed in to play -- looks at messages to determine to make global
   }
@@ -190,6 +190,6 @@ module.exports = {
   numTurns,
   whoseTurn,
   gameOver,
-  addingGameValueFunction
-  // addToGame
+  addingGameValueFunction,
+  addToGame
 }
