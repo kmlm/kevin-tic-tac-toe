@@ -7,7 +7,6 @@ const api = require('./api')
 let game = ['', '', '', '', '', '', '', '', '']
 let gameOver = false
 let numTurns = 0
-let notSignedIn = true
 let addtoGameIndex
 let addtoGameValue
 let addingGameValueFunction
@@ -39,16 +38,10 @@ const whoseTurn = function() {
 
 const placeLetter = function(event) {
   event.preventDefault() // preventing page refresh
-  // if (newGameClicked === false){
-  //   return false
-  // }
 
-  // if (notSignedIn) {
-  //   $('.userMessage').text('Please Sign In to play a game')
-  //    console.log ('not signed in')
-  //    console.log(notSignedIn)
-  //    return
-  //  }
+  if ($('.userMessage').text() !== 'X goes first so click a square to begin' && $('.userMessage').text() !== '' ){
+    return // need to be signed in to play -- looks at messages to determine to make global
+  }
   $('#password-change-message').hide()
   $('#message').hide() // hides sign in successfull message when first box clicked
   $('.userMessage').text('') // initial user instruction that goes away
@@ -186,7 +179,6 @@ module.exports = {
   numTurns,
   whoseTurn,
   gameOver,
-  notSignedIn,
   addingGameValueFunction,
   addToGame
 }

@@ -20,7 +20,6 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   console.log(data)
   $('#message').text('Signed in sucessfully')
-  gameEngine.notSignedIn = false
   store.user = data.user
   console.log(store.user)
   $('#sign-in-form').hide()
@@ -31,7 +30,6 @@ const signInSuccess = function (data) {
   // $('password-change').css('display', 'inherit')
   $('.userMessage').text('X goes first so click a square to begin')
   document.getElementById('sign-in-form').reset()
-  console.log(gameEngine.notSignedIn)
 }
 
 const signInFailure = function (error) {
@@ -64,10 +62,6 @@ const signOutSuccess = function () {
   $('#change-password-message').text('Change your password here')
 }
 
-// const signOutFailure = function (error) {
-//   $('.userMessage').text('You are not signed in')
-// }
-
 const changePasswordSuccess = function (data) {
   $('#password-change-message').text('Changed password sucessfully')
   $('#change-password-message').hide()
@@ -83,14 +77,12 @@ const changePasswordFailure = function (error) {
   $('#change-password-message').text('Unable to change password. Please verify you are signed in and try again.')
 }
 
-
 const createGameSuccess = function (data){
   console.log('data is',data)
   store.game = data
   console.log(store)
   console.log(store.game)
 }
-
 
 const createGameFailure = function (error) {
   console.log (error)
