@@ -98,7 +98,7 @@ const createGameFailure = function (error) {
 // }
 
 const showAllGamesSuccess = function (data){
-  $('.userMessage').text('You have played ' + data.games.length +' games!')
+  $('#numGames-message').text('You have played ' + data.games.length +' games!')
   console.log('data is', data.games.length)
   console.log('tester')
 }
