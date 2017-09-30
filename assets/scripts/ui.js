@@ -80,9 +80,10 @@ const changePasswordFailure = function (error) {
 
 
 const createGameSuccess = function (data){
+  console.log('data is',data)
   store.game = data
-  console.log(data)
   console.log(store)
+  console.log(store.game)
 }
 
 

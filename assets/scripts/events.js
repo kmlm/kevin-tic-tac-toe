@@ -41,6 +41,7 @@ event.preventDefault()
   api.newGame(data)
   .then(ui.createGameSuccess)
   .catch(ui.createGameFailure)
+  console.log(data)
 }
 
 const allGames = function (event){

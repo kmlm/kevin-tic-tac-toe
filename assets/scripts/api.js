@@ -40,6 +40,7 @@ const changePassword = function (data) {
 }
 
 const newGame = function (data) {
+  console.log(data)
     return $.ajax({
       url: config.apiOrigin + 'games/',
       method: 'POST',
@@ -51,6 +52,8 @@ const newGame = function (data) {
 }
 
 const addingMoves = function (data) {
+  console.log(data)
+  console.log(store.game)
     return $.ajax({
       url: config.apiOrigin + 'games/' + store.game.id,
       method: 'PATCH',
