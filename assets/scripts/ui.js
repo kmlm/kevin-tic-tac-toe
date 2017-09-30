@@ -23,6 +23,7 @@ const signInSuccess = function (data) {
   $('#message').text('Signed in sucessfully')
   $('.password-change').css('display','block')
   $('.signOut').css('display','block')
+  $('.newGame').css('display','block')
   store.user = data.user
   console.log(store.user)
   $('#sign-in-form').hide()
@@ -56,6 +57,7 @@ const signOutSuccess = function () {
   $('.password-change').css('display','none')
   $('#message').hide()
   $('.signOut').css('display','none')
+  $('.newGame').css('display','none')
   $('#change-password-button').hide()
   $('#password-change-message').hide()
   $('#numGames-message').hide()
