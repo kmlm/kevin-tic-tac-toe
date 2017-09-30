@@ -13,9 +13,6 @@
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
-
-
-
 <body class="#">
 
   <h1>TIC-TAC-TOE</h1>
@@ -39,6 +36,15 @@
         </form>
         <section id ='message'></section>
       </div>
+      <div class='password-change'> <!-- NEEDS TO BE HIDDEN UNTIL BUTTON CLICK -->
+        <section id='change-password-message'> Change your password here </section>
+        <form id='change-password-form'>
+          <input type='text' name="passwords[old]" placeholder="Current Password">
+          <input type='text' name="passwords[new]" placeholder="New Password">
+          <input type="submit" name='submit' value ='Change Password'>
+        </form>
+        <section id ='password-change-message'></section>
+      </div>
     </div>
     <!-- Speace between -->
 
@@ -47,7 +53,7 @@
 
     <!-- Message Area -->
 
-    <p class='userMessage'> Start by clicking a square </p>
+    <p class='userMessage'> Please Sign Up or Sign in to Play </p>
 
     <!-- Game Board -->
 
@@ -74,6 +80,7 @@
 
     <!-- BOXES -->
     <div class="spaceUnderBoard">
+                <section id='numGames-message'> </section>
     </div>
 
     <div>
@@ -99,7 +106,7 @@
     <!-- New Game Button -->
 
     <div class='newGame'>
-      <button type="submit" class='new-game-button'> Give it another go </button>
+      <button id='create-game-button' type="submit" class='new-game-button'> New Game </button>
     </div>
 
 
@@ -115,6 +122,13 @@
       </form>
       <section> </section>
     </div>
+
+    <div class ='signOut'>
+      <form id='all-games' >
+        <button id='all-Games-Button' type='submit' name='submit'> Display Games Played </button>
+      </form>
+    </div>
+
 
 </body>
 

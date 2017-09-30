@@ -22,9 +22,10 @@ $(() => {
   $("#box9").on('click', gameEngine.placeLetter)
 })
 
-// Reset with new game button
+// Reset with new game button and sign out
 $(() => {
   $('.new-game-button').on('click', gameEngine.newGame)
+  $('#sign-out').on('submit', gameEngine.newGame)
 })
 
 
@@ -34,6 +35,9 @@ $(() => {
  $('#new-user-form').on('submit', events.onSignUp)
  $('#sign-in-form').on('submit', events.onSignIn)
  $('#sign-out').on('submit', events.onSignOut)
+ $('#change-password-form').on('submit', events.onChangePassword)
+ $('#all-Games-Button').on('click', events.allGames)
+ $('#create-game-button').on('click', events.createGame)
  })
 
 // use require with a reference to bundle the file and use it in this file

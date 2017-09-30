@@ -27,22 +27,59 @@ const signOut = function () {
   })
 }
 
-// const changePassword = function (data) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/change-password/' + store.user.id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
-//   })
+const changePassword = function (data) {
+  console.log(data)
+  return $.ajax({
+    url: config.apiOrigin + 'change-password/' + store.user.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const newGame = function (data) {
+  console.log(data)
+    return $.ajax({
+      url: config.apiOrigin + 'games/',
+      method: 'POST',
+      headers: {
+        Authorization: 'Token token=' + store.user.token
+      },
+      data
+    })
+}
+
+// const addingMoves = function (data) {
+//   console.log(data)
+//   console.log(store.game)
+//     return $.ajax({
+//       url: config.apiOrigin + 'games/' + store.game.id,
+//       method: 'PATCH',
+//       headers: {
+//         Authorization: 'Token token=' + store.user.token
+//       },
+//       data
+//     })
 // }
-//
+
+const showAllGames = function (){
+  return $.ajax({
+    url: config.apiOrigin + 'games/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+  })
+}
 
 module.exports = {
   signUp,
   signIn,
   signOut,
-  // changePassword,
-  // signOut
+  changePassword,
+  newGame,
+  // addingMoves,
+  showAllGames
 }

@@ -1,12 +1,21 @@
 
+const events = require('./events')
+const ui = require('./ui')
+const api = require('./api')
+
 // board array that pushing x and o to
 let game = ['', '', '', '', '', '', '', '', '']
 let gameOver = false
 let numTurns = 0
+let addtoGameIndex
+let addtoGameValue
+let addingGameValueFunction
+// let newGameClicked = false
 
 // pushing x and o
 const createx = function(index) {
   game[index] = 'x'
+
   console.log(game)
 }
 
@@ -29,11 +38,19 @@ const whoseTurn = function() {
 
 const placeLetter = function(event) {
   event.preventDefault() // preventing page refresh
+  if ($('.userMessage').text() !== 'X goes first so click a square to begin' && $('.userMessage').text() !== ''
+          && $('.userMessage').text() !== 'X WINS!'
+          && $('.userMessage').text() !== 'O WINS!'
+          && $('.userMessage').text() !== 'This game is over. Click the button below to start a new game or Sign Out'
+          && $('.userMessage').text() !== 'Tic Tac Tie!'){
+    return // need to be signed in to play -- looks at messages to determine to make global
+  }
+  $('#numGames-message').hide()
+  $('#password-change-message').hide()
   $('#message').hide() // hides sign in successfull message when first box clicked
   $('.userMessage').text('') // initial user instruction that goes away
   if (gameOver) { // whether clicks should be firing -- should not if game is over
-    console.log('did it work?')
-    $('.userMessage').text('This game is over. Click the button below to start a new game.')
+    $('.userMessage').text('This game is over. Click the button below to start a new game or Sign Out')
     return
   }
   if ($(this).text() === 'X' || $(this).text() === 'O') {
@@ -47,11 +64,30 @@ const placeLetter = function(event) {
     $(this).text('O')
   }
   numTurns++
+  addtoGameIndex = $(this).data('index')
+  addtoGameValue = $(this).text()
   checkForWin()
+  addingGameValueFunction = onGameUpdate(addtoGameIndex,addtoGameValue,gameOver)
   console.log(game)
   console.log(numTurns)
   console.log(gameOver)
+  console.log(addtoGameIndex)
+  console.log(addtoGameValue)
+  console.log(addingGameValueFunction)
+  // addToGame(addingGameValueFunction)
+  // console.log(addToGame(addingGameValueFunction))
 }
+
+
+// ADDING MOVE TO CREATED GAME IN API
+
+// const addToGame = function (data){
+//   console.log('add ran')
+//   api.addingMoves(data)
+//   .then(ui.addToGameSuccess)
+//   .catch(ui.addToGameFailure)
+//   console.log(data)
+// }
 
 // ENDING GAME
 
@@ -99,21 +135,45 @@ const clearBoard = function() {
   $("#box9").text('.')
 }
 
-const clearGameArray = function() {
+let clearGameArray = function() {
   game = ['', '', '', '', '', '', '', '', '']
 }
 
-const clearNumTurns = function() {
+let clearNumTurns = function() {
   numTurns = 0
 }
 const newGame = function(event) {
   event.preventDefault()
+  if ($('.userMessage').text() !== 'X goes first so click a square to begin' && $('.userMessage').text() !== ''
+          && $('.userMessage').text() !== 'X WINS!'
+          && $('.userMessage').text() !== 'O WINS!'
+          && $('.userMessage').text() !== 'This game is over. Click the button below to start a new game or Sign Out'
+          && $('.userMessage').text() !== 'Tic Tac Tie!'){
+    return // need to be signed in to play -- looks at messages to determine to make global
+  }
   clearGameArray()
   clearBoard()
   clearNumTurns()
+  $('#numGames-message').hide()
   $('.userMessage').text('')
   console.log(game)
   console.log(numTurns)
+  gameOver = false
+}
+
+// Adding each move to api
+const onGameUpdate = function (index, value, over) {
+  const data = {
+    'game': {
+      'cell': {
+        'index': index,
+        'value': value
+      },
+      'over': over
+    }
+  }
+  console.log(data)
+  return data
 }
 
 // need a way to push game to storage before clearing everything
@@ -129,5 +189,7 @@ module.exports = {
   clearNumTurns,
   numTurns,
   whoseTurn,
-  gameOver
+  gameOver,
+  addingGameValueFunction
+  // addToGame
 }
