@@ -40,7 +40,7 @@ const signInFailure = function (error) {
 }
 
 const signOutSuccess = function () {
-  $('.userMessage').text('Thanks for Playing! Sign in again if You wish to play again.')
+  $('.userMessage').text('Thanks for Playing! Sign in if you wish to play again.')
   console.log('Logged out sucessfully')
   store.user = null
   console.log (store.user)
