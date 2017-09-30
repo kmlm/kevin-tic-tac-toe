@@ -52,6 +52,7 @@ const signOutSuccess = function () {
   $('.password-change').show()
   $('#change-password-message').show()
   $('#change-password-form').show()
+  $('.password-change').css('display','none')
   $('#message').hide()
   $('#sign-out-input').hide()
   $('#change-password-button').hide()
