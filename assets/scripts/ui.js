@@ -59,7 +59,6 @@ const signOutSuccess = function () {
   gameEngine.clearBoard()
   gameEngine.clearNumTurns()
   gameEngine.gameOver = false
-  // gameEngine.placeLetter()
   $('#message').text('')
   $('#change-password-message').text('Change your password here')
 }
