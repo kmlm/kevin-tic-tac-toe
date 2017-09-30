@@ -38,7 +38,6 @@ const whoseTurn = function() {
 
 const placeLetter = function(event) {
   event.preventDefault() // preventing page refresh
-
   if ($('.userMessage').text() !== 'X goes first so click a square to begin' && $('.userMessage').text() !== ''
           && $('.userMessage').text() !== 'X WINS!'
           && $('.userMessage').text() !== 'O WINS!'
@@ -74,20 +73,20 @@ const placeLetter = function(event) {
   console.log(addtoGameIndex)
   console.log(addtoGameValue)
   console.log(addingGameValueFunction)
-  addToGame(addingGameValueFunction)
-  console.log(addToGame(addingGameValueFunction))
+  // addToGame(addingGameValueFunction)
+  // console.log(addToGame(addingGameValueFunction))
 }
 
 
 // ADDING MOVE TO CREATED GAME IN API
 
-const addToGame = function (data){
-  console.log('add ran')
-  api.addingMoves(data)
-  .then(ui.addToGameSuccess)
-  .catch(ui.addToGameFailure)
-  console.log(data)
-}
+// const addToGame = function (data){
+//   console.log('add ran')
+//   api.addingMoves(data)
+//   .then(ui.addToGameSuccess)
+//   .catch(ui.addToGameFailure)
+//   console.log(data)
+// }
 
 // ENDING GAME
 
@@ -144,13 +143,13 @@ let clearNumTurns = function() {
 }
 const newGame = function(event) {
   event.preventDefault()
-  // if ($('.userMessage').text() !== 'X goes first so click a square to begin' && $('.userMessage').text() !== ''
-  //         && $('.userMessage').text() !== 'X WINS!'
-  //         && $('.userMessage').text() !== 'O WINS!'
-  //         && $('.userMessage').text() !== 'This game is over. Click the button below to start a new game or Sign Out'
-  //         && $('.userMessage').text() !== 'Tic Tac Tie!'){
-  //   return // need to be signed in to play -- looks at messages to determine to make global
-  // }
+  if ($('.userMessage').text() !== 'X goes first so click a square to begin' && $('.userMessage').text() !== ''
+          && $('.userMessage').text() !== 'X WINS!'
+          && $('.userMessage').text() !== 'O WINS!'
+          && $('.userMessage').text() !== 'This game is over. Click the button below to start a new game or Sign Out'
+          && $('.userMessage').text() !== 'Tic Tac Tie!'){
+    return // need to be signed in to play -- looks at messages to determine to make global
+  }
   clearGameArray()
   clearBoard()
   clearNumTurns()
@@ -189,6 +188,6 @@ module.exports = {
   numTurns,
   whoseTurn,
   gameOver,
-  addingGameValueFunction,
-  addToGame
+  addingGameValueFunction
+  // addToGame
 }

@@ -40,7 +40,7 @@ const signInFailure = function (error) {
 }
 
 const signOutSuccess = function () {
-  $('.userMessage').text('Please Sign Up or Sign in to Play')
+  $('.userMessage').text('Thanks for Playing! Sign in again if You wish to play again.')
   console.log('Logged out sucessfully')
   store.user = null
   console.log (store.user)
@@ -55,10 +55,6 @@ const signOutSuccess = function () {
   $('#sign-out-input').hide()
   $('#change-password-button').hide()
   $('#password-change-message').hide()
-  gameEngine.clearGameArray()
-  gameEngine.clearBoard()
-  gameEngine.clearNumTurns()
-  gameEngine.gameOver = false
   $('#message').text('')
   $('#change-password-message').text('Change your password here')
 }
@@ -89,17 +85,17 @@ const createGameSuccess = function (data){
 const createGameFailure = function (error) {
   console.log (error)
 }
-
-const addToGameSuccess = function (data){
-  console.log('ui success ran')
-  store.game = data
-  console.log(data)
-}
-
-const addToGameFailure = function (error){
-  console.log('ui failure ran')
-  console.log (error)
-}
+//
+// const addToGameSuccess = function (data){
+//   console.log('ui success ran')
+//   store.game = data
+//   console.log(data)
+// }
+//
+// const addToGameFailure = function (error){
+//   console.log('ui failure ran')
+//   console.log (error)
+// }
 
 const showAllGamesSuccess = function (data){
   $('.userMessage').text('You have played ' + data.games.length +' games!')
@@ -122,8 +118,8 @@ module.exports = {
   changePasswordFailure,
   createGameSuccess,
   createGameFailure,
-  addToGameSuccess,
-  addToGameFailure,
+  // addToGameSuccess,
+  // addToGameFailure,
   showAllGamesSuccess,
   showAllGamesFailure
 }

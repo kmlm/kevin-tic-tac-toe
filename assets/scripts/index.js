@@ -22,10 +22,10 @@ $(() => {
   $("#box9").on('click', gameEngine.placeLetter)
 })
 
-// Reset with new game button
+// Reset with new game button and sign out
 $(() => {
   $('.new-game-button').on('click', gameEngine.newGame)
-
+  $('#sign-out').on('submit', gameEngine.newGame)
 })
 
 
