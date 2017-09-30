@@ -55,6 +55,7 @@ const signOutSuccess = function () {
   $('#sign-out-input').hide()
   $('#change-password-button').hide()
   $('#password-change-message').hide()
+  $('#numGames-message').hide()
   $('#message').text('')
   $('#change-password-message').text('Change your password here')
 }
@@ -98,6 +99,7 @@ const createGameFailure = function (error) {
 // }
 
 const showAllGamesSuccess = function (data){
+  $('#numGames-message').show()
   $('#numGames-message').text('You have played ' + data.games.length +' games!')
   console.log('data is', data.games.length)
   console.log('tester')

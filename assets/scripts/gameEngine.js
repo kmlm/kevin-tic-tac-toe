@@ -45,6 +45,7 @@ const placeLetter = function(event) {
           && $('.userMessage').text() !== 'Tic Tac Tie!'){
     return // need to be signed in to play -- looks at messages to determine to make global
   }
+  $('#numGames-message').hide()
   $('#password-change-message').hide()
   $('#message').hide() // hides sign in successfull message when first box clicked
   $('.userMessage').text('') // initial user instruction that goes away
@@ -153,6 +154,7 @@ const newGame = function(event) {
   clearGameArray()
   clearBoard()
   clearNumTurns()
+  $('#numGames-message').hide()
   $('.userMessage').text('')
   console.log(game)
   console.log(numTurns)
