@@ -21,6 +21,7 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   console.log(data)
   $('#message').text('Signed in sucessfully')
+  $('.password-change').css('display','block')
   store.user = data.user
   console.log(store.user)
   $('#sign-in-form').hide()
