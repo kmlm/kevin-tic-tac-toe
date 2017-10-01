@@ -78,7 +78,7 @@ const changePasswordSuccess = function(data) {
 
 const changePasswordFailure = function(error) {
   console.log('Unable to change password')
-  $('#change-password-message').text('Unable to change password. Please verify you are signed in and try again.')
+  $('#change-password-message').text('Unable to change password. Please verify your current password.')
   // document.getElementById('change-password-form').reset()
 }
 
