@@ -54,7 +54,7 @@ const newGame = function (data) {
 const addingMoves = function (data) {
   console.log(store)
     return $.ajax({
-      url: config.apiOrigin + 'games/' + store.game.id,
+      url: config.apiOrigin + 'games/' + store.game.game.id,
       method: 'PATCH',
       headers: {
         Authorization: 'Token token=' + store.user.token

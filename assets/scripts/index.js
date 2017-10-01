@@ -39,7 +39,6 @@ $(() => {
  $('#change-password-form').on('submit', events.onChangePassword)
  $('#all-Games-Button').on('click', events.allGames)
  $('#create-game-button').on('click', events.createGame)
- // $('#sign-in-form').on('submit', events.createGame)// create new game on sign in
  })
 
 // use require with a reference to bundle the file and use it in this file
