@@ -9,6 +9,8 @@ $(() => {
   setAPIOrigin(location, config)
 })
 
+// gameEngine
+
 $(() => {
   $('#box1').on('click', gameEngine.placeLetter)
   $('#box2').on('click', gameEngine.placeLetter)

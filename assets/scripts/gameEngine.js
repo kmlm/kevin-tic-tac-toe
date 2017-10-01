@@ -172,8 +172,6 @@ const onGameUpdate = function (index, value, over) {
   return data
 }
 
-// need a way to push game to storage before clearing everything
-
 module.exports = {
   createx,
   createo,

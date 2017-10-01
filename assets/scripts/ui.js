@@ -1,6 +1,4 @@
 const store = require('./store')
-// const gameEngine = require('./gameEngine')
-// const events =require('./events')
 
 const signUpSuccess = function (data) {
   console.log(data)
