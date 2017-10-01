@@ -4,7 +4,7 @@ const store = require('./store')
 
 const signUpSuccess = function (data) {
   console.log(data)
-  $('#message').text('Thanks! Now please sign in under Welcome Back')
+  $('#message').text('Thanks! Now please sign in under Sign In')
   store.user = data.user
   console.log(store.user)
   $('#new-user-form').hide()
@@ -58,7 +58,7 @@ const signOutSuccess = function () {
   $('#password-change-message').show()
   $('#password-change-message').text('')
   $('.password-change').css('display', 'none')
-  $('#message').hide()
+  $('#message').text('')
   $('.signOut').css('display', 'none')
   $('.newGame').css('display', 'none')
   $('#change-password-button').hide()
