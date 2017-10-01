@@ -38,7 +38,7 @@ the API.
 
 ## Wireframes
 
-See included as PNG files in repository
+See included as PNG files in repository under wireframes folder.
 
 ## Technologies used
 
