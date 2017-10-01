@@ -55,12 +55,13 @@ const signOutSuccess = function() {
   $('.password-change').show()
   $('#change-password-message').show()
   $('#change-password-form').show()
+  $('#password-change-message').show()
+  $('#password-change-message').text('')
   $('.password-change').css('display', 'none')
   $('#message').hide()
   $('.signOut').css('display', 'none')
   $('.newGame').css('display', 'none')
   $('#change-password-button').hide()
-  $('#password-change-message').hide()
   $('#numGames-message').hide()
   $('#message').text('')
   $('#change-password-message').text('Change your password here')
@@ -73,13 +74,12 @@ const changePasswordSuccess = function(data) {
   $('#message').hide()
   document.getElementById('change-password-form').reset()
   console.log('Changed password sucessfully')
-  // console.log($('password-change').css())
 }
 
 const changePasswordFailure = function(error) {
   console.log('Unable to change password')
-  $('#change-password-message').text('Unable to change password. Please verify y.')
-  // document.getElementById('change-password-form').reset()
+  $('#change-password-message').text('Unable to change password. Please verify your current password.')
+  document.getElementById('change-password-form').reset()
 }
 
 const createGameSuccess = function(data) {
