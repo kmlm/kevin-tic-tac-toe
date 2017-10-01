@@ -1,6 +1,6 @@
 const store = require('./store')
-const gameEngine = require('./gameEngine')
-const events =require('./events')
+// const gameEngine = require('./gameEngine')
+// const events =require('./events')
 
 const signUpSuccess = function (data) {
   console.log(data)
@@ -34,7 +34,7 @@ const signInSuccess = function (data) {
   $('#sign-out-input').show()
   $('.userMessage').text('X goes first so click a square to begin')
   document.getElementById('sign-in-form').reset()
-  // events.createGame() -- need a way to createGame on sign in
+  document.getElementById('create-game-button').click()
 }
 
 const signInFailure = function (error) {
