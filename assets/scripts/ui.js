@@ -73,13 +73,13 @@ const changePasswordSuccess = function(data) {
   $('#message').hide()
   document.getElementById('change-password-form').reset()
   console.log('Changed password sucessfully')
-  console.log($('password-change').css())
+  // console.log($('password-change').css())
 }
 
 const changePasswordFailure = function(error) {
   console.log('Unable to change password')
   $('#change-password-message').text('Unable to change password. Please verify you are signed in and try again.')
-  document.getElementById('change-password-form').reset()
+  // document.getElementById('change-password-form').reset()
 }
 
 const createGameSuccess = function(data) {
