@@ -43,7 +43,7 @@ See included as PNG files in repository under wireframes folder.
 ## Technologies used
 
 I used HTML to create the buttons, input fields, and Tic-Tac-Toe board on the page.
-I used bootstrap to create the 3 X 3 board and adjusted the borders with CSS, so
+I used bootstrap to create the 3x3 board and adjusted the borders with CSS, so
 that it resembled a tic-tac-toe board. I used CSS to format the page and also
 to set certain IDs or classes as having no display when a user is not logged in.
 Within the HTML I created mainly classes to utilize for my work with CSS and

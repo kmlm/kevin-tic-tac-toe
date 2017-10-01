@@ -43,17 +43,14 @@ const createGame = function (event) {
               $('.userMessage').text() !== 'Tic Tac Tie!') {
     return // need to be signed in to play -- looks at messages to determine to make global
   }
-  console.log('create ran')
   const data = gameEngine.game
   api.newGame(data)
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)
-  console.log(data)
 }
 
 const allGames = function (event) {
   event.preventDefault()
-  console.log('all games worked')
   api.showAllGames()
     .then(ui.showAllGamesSuccess)
     .catch(ui.showAllGamesFailure)

@@ -12,13 +12,10 @@ let addingGameValueFunction
 // pushing x and o
 const createx = function (index) {
   game[index] = 'x'
-
-  console.log(game)
 }
 
 const createo = function (index) {
   game[index] = 'o'
-  console.log(game)
 }
 
 // when to use x or o --- place x on even or 0 and o on odd
@@ -65,24 +62,15 @@ const placeLetter = function (event) {
   addtoGameValue = $(this).text()
   checkForWin()
   addingGameValueFunction = onGameUpdate(addtoGameIndex, addtoGameValue, gameOver)
-  console.log(game)
-  console.log(numTurns)
-  console.log(gameOver)
-  console.log(addtoGameIndex)
-  console.log(addtoGameValue)
-  console.log(addingGameValueFunction)
   addToGame(addingGameValueFunction)
-  console.log(addToGame(addingGameValueFunction))
 }
 
 // ADDING MOVE TO CREATED GAME IN API
 
 const addToGame = function (data) {
-  console.log('add ran')
   api.addingMoves(data)
     .then(ui.addToGameSuccess)
     .catch(ui.addToGameFailure)
-  console.log(data)
 }
 
 // ENDING GAME
@@ -95,7 +83,6 @@ const checkForWin = function () {
     (game[0] === 'x' && game[3] === 'x' && game[6] === 'x') || (game[1] === 'x' && game[4] === 'x' && game[7] === 'x') ||
     (game[2] === 'x' && game[5] === 'x' && game[8] === 'x') || (game[2] === 'x' && game[4] === 'x' && game[6] === 'x')
   ) {
-    console.log('x wins')
     $('.userMessage').text('X WINS!')
     gameOver = true
     return
@@ -104,12 +91,10 @@ const checkForWin = function () {
     (game[0] === 'o' && game[3] === 'o' && game[6] === 'o') || (game[1] === 'o' && game[4] === 'o' && game[7] === 'o') ||
     (game[2] === 'o' && game[5] === 'o' && game[8] === 'o') || (game[2] === 'o' && game[4] === 'o' && game[6] === 'o')
   ) {
-    console.log('o wins')
     $('.userMessage').text('O WINS!')
     gameOver = true
     return
   } else {
-    console.log('no winner')
   }
   if (numTurns === 9) {
     $('.userMessage').text('Tic Tac Tie!')
@@ -152,8 +137,6 @@ const newGame = function (event) {
   clearNumTurns()
   $('#numGames-message').hide()
   $('.userMessage').text('')
-  console.log(game)
-  console.log(numTurns)
   gameOver = false
 }
 
@@ -168,7 +151,6 @@ const onGameUpdate = function (index, value, over) {
       'over': over
     }
   }
-  console.log(data)
   return data
 }
 
