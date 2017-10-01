@@ -26,9 +26,7 @@ $(() => {
 $(() => {
   $('.new-game-button').on('click', gameEngine.newGame)
   $('#sign-out').on('submit', gameEngine.newGame)
-
 })
-
 
 // API
 

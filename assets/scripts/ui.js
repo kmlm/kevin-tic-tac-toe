@@ -78,11 +78,12 @@ const changePasswordSuccess = function(data) {
 
 const changePasswordFailure = function(error) {
   console.log('Unable to change password')
-  $('#change-password-message').text('Unable to change password. Please verify your current password.')
+  $('#change-password-message').text('Unable to change password. Please verify y.')
   // document.getElementById('change-password-form').reset()
 }
 
 const createGameSuccess = function(data) {
+  $('.userMessage').text('X goes first so click a square to begin')
   console.log('create game ran')
   console.log('data is', data)
   store.game = data

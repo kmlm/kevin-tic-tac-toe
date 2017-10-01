@@ -51,7 +51,6 @@ const createGame = function(event) {
         console.log(data)
       }
 
-
 const allGames = function (event){
   event.preventDefault()
   console.log ('all games worked')
