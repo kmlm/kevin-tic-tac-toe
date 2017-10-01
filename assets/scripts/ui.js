@@ -9,7 +9,6 @@ const signUpSuccess = function (data) {
   console.log(store.user)
   $('#new-user-form').hide()
   $('#sign-up-message').hide()
-  $('#sign-out-input').show()
   document.getElementById('new-user-form').reset() // clears fields for input
 }
 
@@ -58,11 +57,11 @@ const signOutSuccess = function () {
   $('#password-change-message').show()
   $('#password-change-message').text('')
   $('.password-change').css('display', 'none')
-  $('#message').text('')
   $('.signOut').css('display', 'none')
   $('.newGame').css('display', 'none')
   $('#change-password-button').hide()
   $('#numGames-message').hide()
+  $('#message').show()
   $('#message').text('')
   $('#change-password-message').text('Change your password here')
 }
