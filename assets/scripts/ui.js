@@ -8,10 +8,9 @@ const signUpSuccess = function (data) {
   document.getElementById('new-user-form').reset() // clears fields for input
 }
 
-const signUpFailure = function (error) {
+const signUpFailure = function () {
   $('#message').text('Unable to sign up with that information')
   document.getElementById('new-user-form').reset()
-  console.log(error)
 }
 
 const signInSuccess = function (data) {
@@ -30,10 +29,9 @@ const signInSuccess = function (data) {
   document.getElementById('create-game-button').click() // triggers new game button to ensure that createGame runs on sign in
 }
 
-const signInFailure = function (error) {
+const signInFailure = function () {
   $('#message').text('Invalid Password / Username')
   document.getElementById('sign-in-form').reset()
-  console.log(error)
 }
 
 const signOutSuccess = function () {
@@ -66,10 +64,9 @@ const changePasswordSuccess = function (data) {
   document.getElementById('change-password-form').reset()
 }
 
-const changePasswordFailure = function (error) {
+const changePasswordFailure = function () {
   $('#change-password-message').text('Unable to change password. Please verify your current password.')
   document.getElementById('change-password-form').reset()
-  console.log(error)
 }
 
 const createGameSuccess = function (data) {
@@ -77,16 +74,14 @@ const createGameSuccess = function (data) {
   store.game = data
 }
 
-const createGameFailure = function (error) {
-  console.log(error)
+const createGameFailure = function () {
 }
 
 const addToGameSuccess = function (data) {
   store.game = data
 }
 
-const addToGameFailure = function (error) {
-  console.log(error)
+const addToGameFailure = function () {
 }
 
 const showAllGamesSuccess = function (data) {
@@ -94,8 +89,7 @@ const showAllGamesSuccess = function (data) {
   $('#numGames-message').text('You have played ' + data.games.length + ' games!')
 }
 
-const showAllGamesFailure = function (error) {
-  console.log(error)
+const showAllGamesFailure = function () {
 }
 
 module.exports = {
@@ -104,7 +98,6 @@ module.exports = {
   signInSuccess,
   signInFailure,
   signOutSuccess,
-  // signOutFailure,
   changePasswordSuccess,
   changePasswordFailure,
   createGameSuccess,
