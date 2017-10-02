@@ -13,9 +13,9 @@ given the instruction that X will go first and they may click on any square with
 the tic-tac-toe board to start a game. The moves alternate between X and O and each
 move is updated through a PATCH request to a unique game ID. The game engine includes
 a measure of what constitutes a win for X, a win for O, and a tie. A user is notified
-of the win or tie. If they try to proceed, they are notified that they may start
-a new game or sign out. All the game history is logged under their user ID as specific
-individual games with unique IDs.
+of the win or tie. If they try to proceed after a game has been completed, they
+are notified that they may start a new game or sign out. All the game history is
+logged under their user ID as specific individual games with unique IDs.
 
 
 ## User Stories
@@ -46,7 +46,7 @@ I used HTML to create the buttons, input fields, and Tic-Tac-Toe board on the pa
 I used bootstrap to create the 3x3 board and adjusted the borders with CSS, so
 that it resembled a tic-tac-toe board. I used CSS to format the page and also
 to set certain IDs or classes as having no display when a user is not logged in.
-Within the HTML I created mainly classes to utilize for my work with CSS and
+Within the HTML, I created mainly classes to utilize for my work with CSS and
 mainly IDs for my work with javascript and jQuery.
 
 I used javascript to create the game engine logic. The logic determines if a user
@@ -80,3 +80,8 @@ there are very similar ID names, especially around the input forms due to the ne
 generate certain messages for each user action. That could cause confusion in the future
 when looking to adjust what messages are rendered for successful of unsuccessful form
 submissions.
+
+Going forward with addtional iterations, I am hoping to make the current code more
+modular by addressing the scope issues above and not relying on the message workaround.
+I would also work on providing the user with some additional statistics from their
+games.
