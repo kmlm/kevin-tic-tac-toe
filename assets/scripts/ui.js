@@ -5,11 +5,12 @@ const signUpSuccess = function (data) {
   store.user = data.user
   $('#new-user-form').hide()
   $('#sign-up-message').hide()
+  $('#successMessage').text('')
   document.getElementById('new-user-form').reset() // clears fields for input
 }
 
 const signUpFailure = function () {
-  $('#message').text('Unable to sign up with that information')
+  $('#successMessage').text('Unable to sign up with that information')
   document.getElementById('new-user-form').reset()
 }
 
@@ -25,6 +26,7 @@ const signInSuccess = function (data) {
   $('#sign-up-message').hide()
   $('#sign-out-input').show()
   $('.userMessage').text('X goes first so click a square to begin')
+  $('#message').text('')
   document.getElementById('sign-in-form').reset()
   document.getElementById('create-game-button').click() // triggers new game button to ensure that createGame runs on sign in
 }
@@ -54,17 +56,19 @@ const signOutSuccess = function () {
   $('#message').show()
   $('#message').text('')
   $('#change-password-message').text('Change your password here')
+  $('#successMessage').text('')
 }
 
 const changePasswordSuccess = function (data) {
   $('#password-change-message').show()
   $('#password-change-message').text('Changed password sucessfully')
-  $('#successMessage').hide()
+  $('#successMessage').text('')
   document.getElementById('change-password-form').reset()
 }
 
 const changePasswordFailure = function () {
   $('#password-change-message').show()
+  $('#successMessage').text('')
   $('#password-change-message').text('Unable to change password. Please verify your current password.')
   document.getElementById('change-password-form').reset()
 }

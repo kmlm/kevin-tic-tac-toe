@@ -52,6 +52,7 @@ const createGame = function (event) {
 const allGames = function (event) {
   event.preventDefault()
   $('#password-change-message').hide()
+  $('#successMessage').text('')
   api.showAllGames()
     .then(ui.showAllGamesSuccess)
     .catch(ui.showAllGamesFailure)
