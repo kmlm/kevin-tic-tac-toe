@@ -137,6 +137,7 @@ const newGame = function (event) {
   clearNumTurns()
   $('#numGames-message').hide()
   $('.userMessage').text('')
+  $('#password-change-message').hide()
   gameOver = false
 }
 

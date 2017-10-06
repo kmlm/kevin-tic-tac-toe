@@ -14,7 +14,7 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (data) {
-  $('#message').text('Signed in sucessfully')
+  $('#successMessage').text('Signed in sucessfully')
   $('.password-change').css('display', 'block')
   $('.signOut').css('display', 'block')
   $('.newGame').css('display', 'block')
@@ -57,15 +57,15 @@ const signOutSuccess = function () {
 }
 
 const changePasswordSuccess = function (data) {
+  $('#password-change-message').show()
   $('#password-change-message').text('Changed password sucessfully')
-  $('#change-password-message').hide()
-  $('#change-password-form').hide()
-  $('#message').hide()
+  $('#successMessage').hide()
   document.getElementById('change-password-form').reset()
 }
 
 const changePasswordFailure = function () {
-  $('#change-password-message').text('Unable to change password. Please verify your current password.')
+  $('#password-change-message').show()
+  $('#password-change-message').text('Unable to change password. Please verify your current password.')
   document.getElementById('change-password-form').reset()
 }
 
