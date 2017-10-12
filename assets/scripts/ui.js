@@ -32,7 +32,7 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function () {
-  $('#message').text('Invalid Password / Username')
+  $('#successMessage').text('Invalid Password / Username')
   document.getElementById('sign-in-form').reset()
 }
 
