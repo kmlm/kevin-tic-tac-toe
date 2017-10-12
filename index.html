@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>TIC-TAC-TOE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="#">
+
+  <h1>TIC-TAC-TOE</h1>
+
+  <!-- Sign in area -->
+  <div class='forms'>
+    <div class='sign-in'>
+      <section id='sign-in-message'> Sign In </section>
+      <form id='sign-in-form'>
+        <input type='text' name="credentials[email]" placeholder="Email">
+        <input type='password' name="credentials[password]" placeholder="Password">
+        <input type="submit" name='submit' value='Sign In'>
+      </form>
+      <div class='sign-up'>
+        <section id='sign-up-message'> New Here? No problem </section>
+        <form id='new-user-form'>
+          <input type='text' name="credentials[email]" placeholder="Email">
+          <input type='text' name="credentials[password]" placeholder="Password">
+          <input type='text' name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <input type="submit" name='submit' value='Sign Up'>
+        </form>
+        <section id='message'></section>
+      </div>
+      <div class='password-change'>
+        <!-- NEEDS TO BE HIDDEN UNTIL BUTTON CLICK -->
+        <section id='change-password-message'> Change your password here </section>
+        <form id='change-password-form'>
+          <input type='text' name="passwords[old]" placeholder="Current Password">
+          <input type='text' name="passwords[new]" placeholder="New Password">
+          <input type="submit" name='submit' value='Change Password'>
+        </form>
+        <section id='password-change-message'></section>
+      </div>
+    </div>
+    <!-- Speace between -->
+
+    <div class="spaceBetween">
+
+    </div>
+
+<div>
+    <section id = 'successMessage'> <section>
+</div>
+
+    <div class='signOut'>
+      <form id='sign-out'>
+        <input id='sign-out-input' type='submit' name='submit' value='Sign Out'>
+      </form>
+    </div>
+
+    <div class='signOut'>
+      <form id='all-games'>
+        <button id='all-Games-Button' type='submit' name='submit'> Display Games Played </button>
+      </form>
+    </div>
+
+    <div class="spaceBetweenButtons">
+    </div>
+    <!-- Sign Out Button - trigger thanks for playing in UI Success and You can't leave yet for failure in section  -->
+    <!-- ***Need to hide until signed in**** -->
+
+    <!-- New Game Button -->
+
+    <div class='newGame'>
+      <button id='create-game-button' type="submit" class='new-game-button'> New Game </button>
+    </div>
+
+    <div class="spaceAboveBoard">
+      <section id='numGames-message'> </section>
+    </div>
+    <!-- Message Area -->
+    <div>
+      <p class='userMessage'> Please Sign Up or Sign in to Play </p>
+    </div>
+    <!-- Game Board -->
+
+    <div class='board'>
+
+      <div class="top">
+        <div data-index='0' class="col-xs-4 col-md-4 box" id='box1'>.</div>
+        <div data-index='1' class="col-xs-4 col-md-4 box" id='box2'>.</div>
+        <div data-index='2' class="col-xs-4 col-md-4 box" id='box3'>.</div>
+      </div>
+
+      <div class="middle">
+        <div data-index='3' class="col-xs-4 col-md-4 box" id='box4'>.</div>
+        <div data-index='4' class="col-xs-4 col-md-4 box" id='box5'>.</div>
+        <div data-index='5' class="col-xs-4 col-md-4 box" id='box6'>.</div>
+      </div>
+
+      <div class="bottom">
+        <div data-index='6' class="col-xs-4 col-md-4 box" id='box7'>.</div>
+        <div data-index='7' class="col-xs-4 col-md-4 box" id='box8'>.</div>
+        <div data-index='8' class="col-xs-4 col-md-4 box" id='box9'>.</div>
+      </div>
+    </div>
+
+    <!-- BOXES -->
+    <div class="spaceUnderBoard">
+
+    </div>
+
+    <div>
+      <!-- Left Message Box -->
+
+      <div class='x-box'>
+        <p id='xInBox'> X </p>
+      </div>
+
+
+      <!-- Right Message Box -->
+      <div class='o-box'>
+        <p id='oInBox'> O </p>
+      </div>
+
+    </div>
+
+    <!-- Space between -->
+
+    <div class="spaceBetween">
+    </div> -->
+
+</body>
+
+</html>
